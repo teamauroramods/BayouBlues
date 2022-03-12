@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "${id}",
+  "version": "${version}",
+  "name": "${name}",
+  "description": "This is an example starter template.",
+  "authors": [ "Moonflower" ],
+  "contributors": [ "An author", "Another author", "The last author" ],
+  "contact": {
+    "homepage": "https://www.moonflower.gg",
+	"issues": "https://github.com/MoonflowerTeam/${repo}/issues",
+    "sources": "https://github.com/MoonflowerTeam/${repo}/"
+  },
+  "license": "GPLv3",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "gg.moonflower.starter.core.fabric.StarterFabric"
+    ],
+    "fabric-datagen": [
+      "gg.moonflower.starter.core.fabric.StarterFabricDatagen"
+    ]
+  },
+  "depends": {
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "pollen": "1.0.0"
+  }
+}
