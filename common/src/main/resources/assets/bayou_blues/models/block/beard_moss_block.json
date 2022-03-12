@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "bayou_blues:block/beard_moss_block"
+  }
+}

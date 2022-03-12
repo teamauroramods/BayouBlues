@@ -8,7 +8,7 @@ pluginManagement {
     }
 }
 
-rootProject.name = "starter"
+rootProject.name = "bayou_blues"
 
 include("common")
 include("fabric")

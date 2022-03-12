@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "bayou_blues:block/giant_fern_bottom"
+    },
+    "half=upper": {
+      "model": "bayou_blues:block/giant_fern_top"
+    }
+  }
+}

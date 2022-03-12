@@ -1,0 +1,100 @@
+{
+  "_comment": "Cypress",
+  "block.bayou_blues.stripped_cypress_log": "Tronco de ciprés sin corteza",
+  "block.bayou_blues.cypress_log": "Tronco de ciprés",
+  "block.bayou_blues.stripped_cypress_wood": "Leño de ciprés sin corteza",
+  "block.bayou_blues.cypress_wood": "Leño de ciprés",
+  "block.bayou_blues.cypress_planks": "Madera de ciprés",
+  "block.bayou_blues.cypress_slab": "Baldosa de ciprés",
+  "block.bayou_blues.cypress_stairs": "Escaleras de ciprés",
+  "block.bayou_blues.cypress_pressure_plate": "Placa de presión de ciprés",
+  "block.bayou_blues.cypress_fence": "Valla de ciprés",
+  "block.bayou_blues.cypress_fence_gate": "Puerta de valla de ciprés",
+  "block.bayou_blues.cypress_button": "Botón de ciprés",
+  "block.bayou_blues.cypress_trapdoor": "Escotilla de ciprés",
+  "block.bayou_blues.cypress_door": "Puerta de ciprés",
+  "block.bayou_blues.cypress_sign": "Cartel de ciprés",
+  "block.bayou_blues.cypress_leaves": "Hojas de ciprés",
+  "block.bayou_blues.cypress_sapling": "Brote de ciprés",
+  "block.bayou_blues.cypress_leaf_carpet": "Alfombra de hojas de ciprés",
+  "block.bayou_blues.cypress_bookshelf": "Biblioteca de ciprés",
+  "block.bayou_blues.cypress_chest": "Cofre de ciprés",
+  "block.bayou_blues.cypress_trapped_chest": "Cofre con trampa de ciprés",
+  "block.bayou_blues.cypress_ladder": "Escalera de ciprés",
+  "block.bayou_blues.cypress_vertical_slab": "Baldosa vertical de ciprés",
+  "block.bayou_blues.vertical_cypress_planks": "Madera vertical de ciprés",
+  "block.bayou_blues.cypress_hedge": "Seto de ciprés",
+  "block.bayou_blues.cypress_post": "Poste de ciprés",
+  "block.bayou_blues.stripped_cypress_post": "Poste de ciprés sin corteza",
+  "block.bayou_blues.cypress_beehive": "Apiario de ciprés",
+  "block.bayou_blues.potted_cypress_sapling": "Maceta con brote de ciprés",
+
+  "item.bayou_blues.cypress_boat": "Bote de ciprés",
+
+  "block.bayou_blues.hanging_cypress_leaves": "Hojas colgantes de ciprés",
+
+  "block.bayou_blues.cypress_knee": "Neumatóforo de ciprés",
+  "block.bayou_blues.large_cypress_knee": "Neumatóforo de ciprés alto",
+
+
+  "_comment1": "Gooseberries",
+  "item.bayou_blues.gooseberries": "Grosellas",
+  "item.bayou_blues.gooseberry_juice": "Jugo de grosellas",
+  "item.bayou_blues.gooseberry_pie": "Tarta de grosellas",
+
+  "block.bayou_blues.cypress_branch": "Rama de ciprés",
+  "block.bayou_blues.gooseberry_sack": "Saco de grosellas",
+
+  "item.bayou_blues.honey_glazed_gooseberries": "Grosellas glaseadas con miel",
+  "item.bayou_blues.gooseberry_jam": "Mermelada de grosellas",
+  "item.bayou_blues.gooseberry_jam_cookie": "Galletita con mermelada de grosellas",
+
+
+  "_comment2": "Biome & Slabfish",
+  "biome.bayou_blues.bayou": "Bayou",
+  "biome.bayou_blues.bayou_hills": "Colinas de bayou",
+
+  "entity.bayou_blues.slabfish.type.bayou": "Bayou",
+
+
+  "_comment3": "Lily Flowers",
+  "block.bayou_blues.blue_lily": "Lirio azul",
+  "block.bayou_blues.light_gray_lily": "Lirio gris claro",
+  "block.bayou_blues.cyan_lily": "Lirio cian",
+  "block.bayou_blues.light_blue_lily": "Lirio azul celeste",
+  "block.bayou_blues.magenta_lily": "Lirio magenta",
+  "block.bayou_blues.pink_lily": "Lirio rosa",
+  "block.bayou_blues.purple_lily": "Lirio violeta",
+  "block.bayou_blues.white_lily": "Lirio blanco",
+
+  "block.bayou_blues.potted_blue_lily": "Maceta con lirio azul",
+  "block.bayou_blues.potted_light_gray_lily": "Maceta con lirio gris claro",
+  "block.bayou_blues.potted_cyan_lily": "Maceta con lirio cian",
+  "block.bayou_blues.potted_light_blue_lily": "Maceta con lirio azul celeste",
+  "block.bayou_blues.potted_magenta_lily": "Maceta con lirio magenta",
+  "block.bayou_blues.potted_pink_lily": "Maceta con lirio rosa",
+  "block.bayou_blues.potted_purple_lily": "Maceta con lirio violeta",
+  "block.bayou_blues.potted_white_lily": "Maceta con lirio blanco",
+
+  "item.bayou_blues.blue_lily": "Lirio azul",
+  "item.bayou_blues.light_gray_lily": "Lirio gris claro",
+  "item.bayou_blues.cyan_lily": "Lirio cian",
+  "item.bayou_blues.light_blue_lily": "Lirio azul celeste",
+  "item.bayou_blues.magenta_lily": "Lirio magenta",
+  "item.bayou_blues.pink_lily": "Lirio rosa",
+  "item.bayou_blues.purple_lily": "Lirio violeta",
+  "item.bayou_blues.white_lily": "Lirio blanco",
+
+
+  "_comment4": "Other Vegetation",
+  "block.bayou_blues.algae": "Algas",
+  "block.bayou_blues.algae_thatch": "Paja de algas",
+  "block.bayou_blues.algae_thatch_slab": "Baldosa de paja de algas",
+  "block.bayou_blues.algae_thatch_stairs": "Escaleras de paja de algas",
+  "block.bayou_blues.algae_thatch_vertical_slab": "Baldosa vertical de paja de algas",
+
+  "block.bayou_blues.beard_moss_block": "Bloque de musgo de barba",
+  "block.bayou_blues.beard_moss": "Musgo de barba",
+
+  "block.bayou_blues.giant_fern": "Helecho gigante"
+}

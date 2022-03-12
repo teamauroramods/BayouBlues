@@ -1,0 +1,91 @@
+{
+  "_comment": "Cypress",
+  "block.bayou_blues.stripped_cypress_log": "Tronco de cipreste descascado",
+  "block.bayou_blues.cypress_log": "Tronco de cipreste",
+  "block.bayou_blues.stripped_cypress_wood": "Madeira de cipreste descascada",
+  "block.bayou_blues.cypress_wood": "Madeira de cipreste",
+  "block.bayou_blues.cypress_planks": "Tábuas de cipreste",
+  "block.bayou_blues.cypress_slab": "Laje de cipreste",
+  "block.bayou_blues.cypress_stairs": "Escadas de cipreste",
+  "block.bayou_blues.cypress_pressure_plate": "Placa de pressão de cipreste",
+  "block.bayou_blues.cypress_fence": "Cerca de cipreste",
+  "block.bayou_blues.cypress_fence_gate": "Portão de cipreste",
+  "block.bayou_blues.cypress_button": "Botão de cipreste",
+  "block.bayou_blues.cypress_trapdoor": "Alçapão de cipreste",
+  "block.bayou_blues.cypress_door": "Porta de cipreste",
+  "block.bayou_blues.cypress_sign": "Placa de cipreste",
+  "block.bayou_blues.cypress_leaves": "Folhas de cipreste",
+  "block.bayou_blues.cypress_sapling": "Muda de cipreste",
+  "block.bayou_blues.cypress_leaf_carpet": "Tapete de folhas de cipreste",
+  "block.bayou_blues.cypress_bookshelf": "Estante de livros de cipreste",
+  "block.bayou_blues.cypress_chest": "Baú de cipreste",
+  "block.bayou_blues.cypress_trapped_chest": "Baú de cipreste com armadilha",
+  "block.bayou_blues.cypress_ladder": "Escada de mão de cipreste",
+  "block.bayou_blues.cypress_vertical_slab": "Laje vertical de cipreste",
+  "block.bayou_blues.vertical_cypress_planks": "Tábuas de cipreste verticais",
+  "block.bayou_blues.cypress_hedge": "Cerca viva de cipreste",
+  "block.bayou_blues.cypress_post": "Poste de cipreste",
+  "block.bayou_blues.stripped_cypress_post": "Poste de cipreste descascado",
+  "block.bayou_blues.cypress_beehive": "Colmeia de cipreste",
+  "block.bayou_blues.potted_cypress_sapling": "Muda de cipreste envasada",
+
+  "item.bayou_blues.cypress_boat": "Bote de cipreste",
+
+  "block.bayou_blues.hanging_cypress_leaves": "Folhas de cipreste suspensas",
+
+  "block.bayou_blues.cypress_knee": "Joelho de cipreste",
+  "block.bayou_blues.large_cypress_knee": "Joelho de cipreste grande",
+
+
+  "_comment1": "Gooseberries",
+  "item.bayou_blues.gooseberries": "Groselhas",
+  "item.bayou_blues.gooseberry_juice": "Suco de groselha",
+  "item.bayou_blues.gooseberry_pie": "Torta de groselha",
+
+  "block.bayou_blues.cypress_branch": "Galho de cipreste",
+  "block.bayou_blues.gooseberry_sack": "Saco de groselhas",
+
+  "item.bayou_blues.honey_glazed_gooseberries": "Groselhas glaceadas com mel",
+  "item.bayou_blues.gooseberry_jam": "Geleia de groselha",
+  "item.bayou_blues.gooseberry_jam_cookie": "Biscoito de geleia de groselha",
+
+
+  "_comment2": "Biome & Slabfish",
+  "biome.bayou_blues.bayou": "Bayou",
+  "biome.bayou_blues.bayou_hills": "Colinas do bayou",
+
+  "entity.bayou_blues.slabfish.type.bayou": "Bayou",
+
+
+  "_comment3": "Lily Flowers",
+  "block.bayou_blues.blue_lily": "Nenúfar azul",
+  "block.bayou_blues.light_gray_lily": "Nenúfar cinza-claro",
+  "block.bayou_blues.cyan_lily": "Nenúfar ciano",
+  "block.bayou_blues.light_blue_lily": "Nenúfar azul-claro",
+  "block.bayou_blues.magenta_lily": "Nenúfar magenta",
+  "block.bayou_blues.pink_lily": "Nenúfar rosa",
+  "block.bayou_blues.purple_lily": "Nenúfar roxo",
+  "block.bayou_blues.white_lily": "Nenúfar branco",
+
+  "item.bayou_blues.blue_lily": "Nenúfar azul",
+  "item.bayou_blues.light_gray_lily": "Nenúfar cinza-claro",
+  "item.bayou_blues.cyan_lily": "Nenúfar ciano",
+  "item.bayou_blues.light_blue_lily": "Nenúfar azul-claro",
+  "item.bayou_blues.magenta_lily": "Nenúfar magenta",
+  "item.bayou_blues.pink_lily": "Nenúfar rosa",
+  "item.bayou_blues.purple_lily": "Nenúfar roxo",
+  "item.bayou_blues.white_lily": "Nenúfar branco",
+
+
+  "_comment4": "Other Vegetation",
+  "block.bayou_blues.algae": "Macroalgas",
+  "block.bayou_blues.algae_thatch": "Colmo de macroalgas",
+  "block.bayou_blues.algae_thatch_slab": "Laje de colmo de macroalgas",
+  "block.bayou_blues.algae_thatch_stairs": "Escadas de colmo de macroalgas",
+  "block.bayou_blues.algae_thatch_vertical_slab": "Laje vertical de colmo de macroalgas",
+
+  "block.bayou_blues.beard_moss_block": "Bloco de barba-de-velho",
+  "block.bayou_blues.beard_moss": "Barba-de-velho",
+
+  "block.bayou_blues.giant_fern": "Samambaia gigante"
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "type=bottom": { "model": "bayou_blues:block/algae_thatch_slab" },
+    "type=top": { "model": "bayou_blues:block/algae_thatch_slab_top" },
+    "type=double": { "model": "bayou_blues:block/algae_thatch" }
+  }
+}

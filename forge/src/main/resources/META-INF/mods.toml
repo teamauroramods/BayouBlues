@@ -1,18 +1,17 @@
 modLoader = "javafml"
 loaderVersion = "[39,)"
-issueTrackerURL = "https://github.com/MoonflowerTeam/${repo}/issues"
+issueTrackerURL = "https://github.com/teamauroramods/BayouBlues/issues"
 license = "GPLv3"
 
 [[mods]]
 modId = "${id}"
 version = "${version}"
 displayName = "${name}"
-authors = "Moonflower"
-credits = "An author, another author, and the last author."
-description = "This is an example starter template."
-displayURL = "https://www.moonflower.gg"
-#updateJSONURL = ""
-#logoFile = ""
+authors = "Team Aurora"
+description = "A swampy new Bayou biome!"
+displayURL = "https://discord.gg/VzXSCFp"
+logoFile = "logo.png"
+
 
 [[dependencies.${id}]]
 modId = "forge"
@@ -24,13 +23,13 @@ side = "BOTH"
 [[dependencies.${id}]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.18,)"
+versionRange = "[1.18.1,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.${id}]]
 modId = "pollen"
 mandatory = true
-versionRange = "[1.0.0,)"
+versionRange = "[1.1.1,)"
 ordering = "BEFORE"
 side = "BOTH"

@@ -1,0 +1,100 @@
+{
+  "_comment": "Кипарис",
+  "block.bayou_blues.stripped_cypress_log": "Обтёсанная кипарисовое бревно",
+  "block.bayou_blues.cypress_log": "Кипарисовое бревно",
+  "block.bayou_blues.stripped_cypress_wood": "Обтёсанная кипарисовая древесина",
+  "block.bayou_blues.cypress_wood": "Кипарис",
+  "block.bayou_blues.cypress_planks": "Кипарисовые доски",
+  "block.bayou_blues.cypress_slab": "Кипарисовые плиты",
+  "block.bayou_blues.cypress_stairs": "Кипарисовые ступеньки",
+  "block.bayou_blues.cypress_pressure_plate": "Кипарисовая нажимная плита",
+  "block.bayou_blues.cypress_fence": "Кипаросвый забор",
+  "block.bayou_blues.cypress_fence_gate": "Кипарисовая калитка",
+  "block.bayou_blues.cypress_button": "Кипаросвая кнопка",
+  "block.bayou_blues.cypress_trapdoor": "Кипаросвый люк",
+  "block.bayou_blues.cypress_door": "Кипарисовая дверь",
+  "block.bayou_blues.cypress_sign": "Кипарисовая табличка",
+  "block.bayou_blues.cypress_leaves": "Листва кипариса",
+  "block.bayou_blues.cypress_sapling": "Саженец кипариса",
+  "block.bayou_blues.cypress_leaf_carpet": "Кипарисовый лиственный ковер",
+  "block.bayou_blues.cypress_bookshelf": "Кипарисовая книжная полка",
+  "block.bayou_blues.cypress_chest": "Кипарисовый сундук",
+  "block.bayou_blues.cypress_trapped_chest": "Кипарисовый сундук-ловушка",
+  "block.bayou_blues.cypress_ladder": "Кипарисовая лестница",
+  "block.bayou_blues.cypress_vertical_slab": "Кипарисовая вертикальная",
+  "block.bayou_blues.vertical_cypress_planks": "Вертикальные кипарисовые доски",
+  "block.bayou_blues.cypress_hedge": "Кипарисовая живая изгородь",
+  "block.bayou_blues.cypress_post": "Кипарисовый столб",
+  "block.bayou_blues.stripped_cypress_post": "Обтёсанный кипарисовый столб",
+  "block.bayou_blues.cypress_beehive": "Кипарисовое пчелиное гнездо",
+  "block.bayou_blues.potted_cypress_sapling": "Кипарисовый саженец в горшке",
+
+  "item.bayou_blues.cypress_boat": "Кипарисовая лодка",
+
+  "block.bayou_blues.hanging_cypress_leaves": "Свисающая кипарисовая листва",
+
+  "block.bayou_blues.cypress_knee": "Кипарисовый корень",
+  "block.bayou_blues.large_cypress_knee": "Большой кипарисовый корень",
+
+
+  "_comment1": "Крыжовник",
+  "item.bayou_blues.gooseberries": "Крыжовник",
+  "item.bayou_blues.gooseberry_juice": "Сок из крыжовника",
+  "item.bayou_blues.gooseberry_pie": "Пирог из крыжовника",
+
+  "block.bayou_blues.cypress_branch": "Кипаросвый ветка",
+  "block.bayou_blues.gooseberry_sack": "Мешок крыжовника",
+
+  "item.bayou_blues.honey_glazed_gooseberries": "Крыжовник в медовой глазури",
+  "item.bayou_blues.gooseberry_jam": "Варенье из крыжовника",
+  "item.bayou_blues.gooseberry_jam_cookie": "Печенье с крыжовниковым вареньем",
+
+
+  "_comment2": "Биом и Плиторыб",
+  "biome.bayou_blues.bayou": "Байу",
+  "biome.bayou_blues.bayou_hills": "Холмы Байу",
+
+  "entity.bayou_blues.slabfish.type.bayou": "Байу",
+
+
+  "_comment3": "Цветы лилии",
+  "block.bayou_blues.blue_lily": "Синяя лилия",
+  "block.bayou_blues.light_gray_lily": "Светло-серая лилия",
+  "block.bayou_blues.cyan_lily": "Голубая лилия",
+  "block.bayou_blues.light_blue_lily": "Светло-синяя лилия",
+  "block.bayou_blues.magenta_lily": "Пурпурная лилия",
+  "block.bayou_blues.pink_lily": "Розовая лилия",
+  "block.bayou_blues.purple_lily": "Фиолетовая лилия",
+  "block.bayou_blues.white_lily": "Белая лилия",
+
+  "block.bayou_blues.potted_blue_lily": "Синяя лилия в горшке",
+  "block.bayou_blues.potted_light_gray_lily": "Светло-серая лилия в горшке",
+  "block.bayou_blues.potted_cyan_lily": "Голубая лилия в горшке",
+  "block.bayou_blues.potted_light_blue_lily": "Светло-синяя лилия в горшке",
+  "block.bayou_blues.potted_magenta_lily": "Пурпурная лилия в горшке",
+  "block.bayou_blues.potted_pink_lily": "Розовая лилия в горшке",
+  "block.bayou_blues.potted_purple_lily": "Фиолетовая лилия в горшке",
+  "block.bayou_blues.potted_white_lily": "Белая лилия в горшке",
+
+  "item.bayou_blues.blue_lily": "Синяя лилия",
+  "item.bayou_blues.light_gray_lily": "Светло-серая лилия",
+  "item.bayou_blues.cyan_lily": "Голубая лилия",
+  "item.bayou_blues.light_blue_lily": "Светло-синяя лилия",
+  "item.bayou_blues.magenta_lily": "Пурпурная лилия",
+  "item.bayou_blues.pink_lily": "Розовая лилия",
+  "item.bayou_blues.purple_lily": "Фиолетовая лилия",
+  "item.bayou_blues.white_lily": "Белая лилия",
+
+
+  "_comment4": "Другие растения",
+  "block.bayou_blues.algae": "Водоросли",
+  "block.bayou_blues.algae_thatch": "Солома из водорослей",
+  "block.bayou_blues.algae_thatch_slab": "Соломенная плита из водорослей",
+  "block.bayou_blues.algae_thatch_stairs": "Соломенные ступеньки из водорослей",
+  "block.bayou_blues.algae_thatch_vertical_slab": "Вертикальная плита из водорослей",
+
+  "block.bayou_blues.beard_moss_block": "Блок бородатого мха",
+  "block.bayou_blues.beard_moss": "Бородатый мох",
+
+  "block.bayou_blues.giant_fern": "Гигантский папоротник"
+}

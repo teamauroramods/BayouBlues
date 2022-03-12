@@ -1,0 +1,6 @@
+{
+  "parent": "bayou_blues:block/cross_ao",
+  "textures": {
+    "cross": "bayou_blues:block/beard_moss_top"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "bayou_blues:block/large_cypress_knee_top"
+  }
+}

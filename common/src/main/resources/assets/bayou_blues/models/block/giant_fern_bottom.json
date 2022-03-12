@@ -1,0 +1,6 @@
+{
+  "parent": "bayou_blues:block/cross_tint",
+  "textures": {
+    "cross": "bayou_blues:block/giant_fern_bottom"
+  }
+}

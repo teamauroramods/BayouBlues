@@ -1,0 +1,6 @@
+{
+  "parent": "bayou_blues:block/branch",
+  "textures": {
+    "branch": "bayou_blues:block/cypress_branch_2"
+  }
+}

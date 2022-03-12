@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "top": "bayou_blues:block/gooseberry_sack_top",
+    "bottom": "bayou_blues:block/gooseberry_sack_bottom",
+    "side": "bayou_blues:block/gooseberry_sack"
+  }
+}

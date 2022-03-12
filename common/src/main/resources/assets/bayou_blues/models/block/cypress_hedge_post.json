@@ -1,0 +1,7 @@
+{
+  "parent": "abnormals_core:block/hedge_post",
+  "textures": {
+    "log": "bayou_blues:block/cypress_log",
+    "leaf": "bayou_blues:block/cypress_leaves"
+  }
+}

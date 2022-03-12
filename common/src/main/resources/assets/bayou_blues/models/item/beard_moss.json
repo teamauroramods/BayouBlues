@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "bayou_blues:block/beard_moss_bottom"
+  }
+}

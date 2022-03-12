@@ -1,0 +1,100 @@
+{
+  "_comment": "Cyprys",
+  "block.bayou_blues.stripped_cypress_log": "Okorowany cyprysowy pień",
+  "block.bayou_blues.cypress_log": "Cyprysowy pień",
+  "block.bayou_blues.stripped_cypress_wood": "Okorowane cyprysowe drewno",
+  "block.bayou_blues.cypress_wood": "Cyprysowe drewno",
+  "block.bayou_blues.cypress_planks": "Cyprysowe deski",
+  "block.bayou_blues.cypress_slab": "Cyprysowa płyta",
+  "block.bayou_blues.cypress_stairs": "Cyprysowe schody",
+  "block.bayou_blues.cypress_pressure_plate": "Cyprysowa płyta naciskowa",
+  "block.bayou_blues.cypress_fence": "Cyprysowy płot",
+  "block.bayou_blues.cypress_fence_gate": "Cyprysowa furtka",
+  "block.bayou_blues.cypress_button": "Cyprysowy przycisk",
+  "block.bayou_blues.cypress_trapdoor": "Cyprysowa klapa",
+  "block.bayou_blues.cypress_door": "Cyprysowe drzwi",
+  "block.bayou_blues.cypress_sign": "Cyprysowa tabliczka",
+  "block.bayou_blues.cypress_leaves": "Cyprysowe liście",
+  "block.bayou_blues.cypress_sapling": "Sadzonka cyprysu",
+  "block.bayou_blues.cypress_leaf_carpet": "Warstwa cyprysowych liści",
+  "block.bayou_blues.cypress_bookshelf": "Cyprysowa biblioteczka",
+  "block.bayou_blues.cypress_chest": "Cyprysowa skrzynia",
+  "block.bayou_blues.cypress_trapped_chest": "Cyprysowa skrzynia-pułapka",
+  "block.bayou_blues.cypress_ladder": "Cyprysowa drabina",
+  "block.bayou_blues.cypress_vertical_slab": "Pionowa cyprysowa płyta",
+  "block.bayou_blues.vertical_cypress_planks": "Pionowe cyprysowe deski",
+  "block.bayou_blues.cypress_hedge": "Cyprysowy żywopłot",
+  "block.bayou_blues.cypress_post": "Cyprysowa belka",
+  "block.bayou_blues.stripped_cypress_post": "Okorowana cyprysowa belka",
+  "block.bayou_blues.cypress_beehive": "Cyprysowy ul",
+  "block.bayou_blues.potted_cypress_sapling": "Sadzonka cyprysu",
+
+  "item.bayou_blues.cypress_boat": "Cyprysowa łódka",
+
+  "block.bayou_blues.hanging_cypress_leaves": "Wiszące cyprysowe liście",
+
+  "block.bayou_blues.cypress_knee": "Korzeń oddechowy",
+  "block.bayou_blues.large_cypress_knee": "Wielki korzeń oddechowy",
+
+
+  "_comment1": "Agrest",
+  "item.bayou_blues.gooseberries": "Agrest",
+  "item.bayou_blues.gooseberry_juice": "Sok agrestowy",
+  "item.bayou_blues.gooseberry_pie": "Placek agrestowy",
+
+  "block.bayou_blues.cypress_branch": "Cyprysowa gałąź",
+  "block.bayou_blues.gooseberry_sack": "Wór agrestu",
+
+  "item.bayou_blues.honey_glazed_gooseberries": "Agrest w miodzie",
+  "item.bayou_blues.gooseberry_jam": "Dżem agrestowy",
+  "item.bayou_blues.gooseberry_jam_cookie": "Ciastko z dżemem agrestowym",
+
+
+  "_comment2": "Biomy i płytoryb",
+  "biome.bayou_blues.bayou": "Zalewisko",
+  "biome.bayou_blues.bayou_hills": "Wzgórza zalewiska",
+
+  "entity.bayou_blues.slabfish.type.bayou": "Zalewisko",
+
+
+  "_comment3": "Kwiaty lilii",
+  "block.bayou_blues.blue_lily": "Niebieska lilia",
+  "block.bayou_blues.light_gray_lily": "Jasnoszara lilia",
+  "block.bayou_blues.cyan_lily": "Błękitna lilia",
+  "block.bayou_blues.light_blue_lily": "Jasnoniebieska lilia",
+  "block.bayou_blues.magenta_lily": "Karmazynowa lilia",
+  "block.bayou_blues.pink_lily": "Różowa lilia",
+  "block.bayou_blues.purple_lily": "Fioletowa lilia",
+  "block.bayou_blues.white_lily": "Biała lilia",
+
+  "block.bayou_blues.potted_blue_lily": "Niebieska lilia w doniczce",
+  "block.bayou_blues.potted_light_gray_lily": "Jasnoszara lilia w doniczce",
+  "block.bayou_blues.potted_cyan_lily": "Błękitna lilia w doniczce",
+  "block.bayou_blues.potted_light_blue_lily": "Jasnoniebieska lilia w doniczce",
+  "block.bayou_blues.potted_magenta_lily": "Karmazynowa lilia w doniczce",
+  "block.bayou_blues.potted_pink_lily": "Różowa lilia w doniczce",
+  "block.bayou_blues.potted_purple_lily": "Fioletowa lilia w doniczce",
+  "block.bayou_blues.potted_white_lily": "Biała lilia w doniczce",
+
+  "item.bayou_blues.blue_lily": "Niebieska lilia",
+  "item.bayou_blues.light_gray_lily": "Jasnoszara lilia",
+  "item.bayou_blues.cyan_lily": "Błękitna lilia",
+  "item.bayou_blues.light_blue_lily": "Jasnoniebieska lilia",
+  "item.bayou_blues.magenta_lily": "Karmazynowa lilia",
+  "item.bayou_blues.pink_lily": "Różowa lilia",
+  "item.bayou_blues.purple_lily": "Fioletowa lilia",
+  "item.bayou_blues.white_lily": "Biała lilia",
+
+
+  "_comment4": "Inna roślinność",
+  "block.bayou_blues.algae": "Glon",
+  "block.bayou_blues.algae_thatch": "Glonowa strzecha",
+  "block.bayou_blues.algae_thatch_slab": "Glonowa strzechowa płyta",
+  "block.bayou_blues.algae_thatch_stairs": "Glonowe strzechowe schody",
+  "block.bayou_blues.algae_thatch_vertical_slab": "Pionowa glonowa strzechowa płyta",
+
+  "block.bayou_blues.beard_moss_block": "Blok oplątwy brodaczkowej",
+  "block.bayou_blues.beard_moss": "Oplątwa brodaczkowa",
+
+  "block.bayou_blues.giant_fern": "Ogromna paproć"
+}

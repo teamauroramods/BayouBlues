@@ -1,0 +1,1 @@
+{"variants": {"facing=north": {"model": "bayou_blues:block/cypress_ladder"}, "facing=east": {"model": "bayou_blues:block/cypress_ladder", "y": 90}, "facing=south": {"model": "bayou_blues:block/cypress_ladder", "y": 180}, "facing=west": {"model": "bayou_blues:block/cypress_ladder", "y": 270}}}

@@ -1,0 +1,6 @@
+{
+  "parent": "bayou_blues:block/lily",
+  "textures": {
+    "flower": "bayou_blues:block/light_blue_lily"
+  }
+}

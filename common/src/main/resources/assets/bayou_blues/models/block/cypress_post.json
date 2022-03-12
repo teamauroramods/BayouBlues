@@ -1,0 +1,6 @@
+{
+  "parent": "abnormals_core:block/post",
+  "textures": {
+    "texture": "bayou_blues:block/cypress_log"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "bayou_blues:block/hanging_cypress_leaves"
+  }
+}

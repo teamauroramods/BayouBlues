@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "bayou_blues:block/large_cypress_knee_top"
+  }
+}
