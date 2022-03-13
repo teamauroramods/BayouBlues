@@ -1,5 +1,6 @@
 package com.teamaurora.bayou_blues.core.registry;
 
+import com.teamaurora.bayou_blues.common.block.HangingCypressLeavesBlock;
 import com.teamaurora.bayou_blues.common.item.FollowItemLike;
 import com.teamaurora.bayou_blues.core.BayouBlues;
 import com.teamaurora.bayou_blues.core.registry.util.Woodset;
@@ -40,6 +41,7 @@ public class BayouBluesBlocks {
     public static final Supplier<Block> CYPRESS_DOOR = registerWoodsetBlock("cypress_door", CYPRESS::door, CreativeModeTab.TAB_REDSTONE, Blocks.OAK_DOOR);
     public static final Supplier<Block> CYPRESS_TRAPDOOR = registerWoodsetBlock("cypress_trapdoor", CYPRESS::trapdoor, CreativeModeTab.TAB_REDSTONE, Blocks.OAK_TRAPDOOR);
 
+    public static final Supplier<Block> HANGING_CYPRESS_LEAVES = registerBlock("hanging_cypress_leaves", () -> new HangingCypressLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
 
 
 

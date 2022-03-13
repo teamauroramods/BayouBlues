@@ -4,6 +4,8 @@ import com.teamaurora.bayou_blues.core.registry.BayouBluesBlocks;
 import com.teamaurora.bayou_blues.core.registry.BayouBluesItems;
 import gg.moonflower.pollen.api.platform.Platform;
 import gg.moonflower.pollen.api.registry.StrippingRegistry;
+import gg.moonflower.pollen.api.registry.client.RenderTypeRegistry;
+import net.minecraft.client.renderer.RenderType;
 
 public class BayouBlues {
     public static final String MOD_ID = "bayou_blues";
@@ -16,7 +18,7 @@ public class BayouBlues {
             .build();
 
     public static void onClientInit() {
-
+        RenderTypeRegistry.register(BayouBluesBlocks.HANGING_CYPRESS_LEAVES.get(), RenderType.cutoutMipped());
     }
 
     public static void onClientPostInit(Platform.ModSetupContext ctx) {
