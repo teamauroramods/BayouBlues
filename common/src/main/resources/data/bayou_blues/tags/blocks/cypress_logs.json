@@ -1,1 +1,9 @@
-{"replace": false, "values": ["bayou_blues:cypress_log", "bayou_blues:cypress_wood", "bayou_blues:stripped_cypress_log", "bayou_blues:stripped_cypress_wood"]}
+{
+  "replace": false,
+  "values": [
+    "bayou_blues:cypress_log",
+    "bayou_blues:cypress_wood",
+    "bayou_blues:stripped_cypress_log",
+    "bayou_blues:stripped_cypress_wood"
+  ]
+}
