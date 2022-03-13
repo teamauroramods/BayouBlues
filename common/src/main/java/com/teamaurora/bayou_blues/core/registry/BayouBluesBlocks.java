@@ -1,7 +1,10 @@
 package com.teamaurora.bayou_blues.core.registry;
 
+import com.teamaurora.bayou_blues.common.block.BeardMossBlock;
+import com.teamaurora.bayou_blues.common.block.BeardMossBlockBlock;
 import com.teamaurora.bayou_blues.common.block.HangingCypressLeavesBlock;
 import com.teamaurora.bayou_blues.common.item.FollowItemLike;
+import com.teamaurora.bayou_blues.common.item.FuelBlockItem;
 import com.teamaurora.bayou_blues.core.BayouBlues;
 import com.teamaurora.bayou_blues.core.registry.util.Woodset;
 import gg.moonflower.pollen.api.registry.PollinatedRegistry;
@@ -12,6 +15,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
@@ -43,12 +47,19 @@ public class BayouBluesBlocks {
 
     public static final Supplier<Block> HANGING_CYPRESS_LEAVES = registerBlock("hanging_cypress_leaves", () -> new HangingCypressLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
 
-
+    public static final Supplier<Block> BEARD_MOSS_BLOCK = registerFuelBlock("beard_moss_block", () -> new BeardMossBlockBlock(Properties.BEARD_MOSS_BLOCK), 800, new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> BEARD_MOSS = registerFuelBlock("beard_moss", () -> new BeardMossBlock(Properties.BEARD_MOSS), 800, new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
 
 
     private static Supplier<Block> registerBlock(String id, Supplier<Block> block, Item.Properties properties) {
         Supplier<Block> register = BLOCKS.register(id, block);
         BayouBluesItems.ITEMS.register(id, () -> new BlockItem(register.get(), properties));
+        return register;
+    }
+
+    private static Supplier<Block> registerFuelBlock(String id, Supplier<Block> block, int burnTime, Item.Properties properties) {
+        Supplier<Block> register = BLOCKS.register(id, block);
+        BayouBluesItems.ITEMS.register(id, () -> new FuelBlockItem(register.get(), burnTime, properties));
         return register;
     }
 
@@ -60,5 +71,7 @@ public class BayouBluesBlocks {
 
     public static final class Properties {
         public static final BlockBehaviour.Properties CYPRESS_LEAVES = BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES);
+        public static final BlockBehaviour.Properties BEARD_MOSS_BLOCK = BlockBehaviour.Properties.of(Material.PLANT).strength(0.1F).sound(SoundType.MOSS);
+        public static final BlockBehaviour.Properties BEARD_MOSS = BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.MOSS).noOcclusion().noCollission().randomTicks();
     }
 }

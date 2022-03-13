@@ -19,6 +19,9 @@ public class BayouBlues {
 
     public static void onClientInit() {
         RenderTypeRegistry.register(BayouBluesBlocks.HANGING_CYPRESS_LEAVES.get(), RenderType.cutoutMipped());
+
+        RenderTypeRegistry.register(BayouBluesBlocks.BEARD_MOSS_BLOCK.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.BEARD_MOSS.get(), RenderType.cutout());
     }
 
     public static void onClientPostInit(Platform.ModSetupContext ctx) {
