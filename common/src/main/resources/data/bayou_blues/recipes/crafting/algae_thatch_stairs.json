@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "bayou_blues:algae_thatch"
+    }
+  },
+  "result": {
+    "item": "bayou_blues:algae_thatch_stairs",
+    "count": 4
+  }
+}
