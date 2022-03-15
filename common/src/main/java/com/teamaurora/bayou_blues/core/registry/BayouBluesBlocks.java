@@ -1,9 +1,6 @@
 package com.teamaurora.bayou_blues.core.registry;
 
-import com.teamaurora.bayou_blues.common.block.AlgaeBlock;
-import com.teamaurora.bayou_blues.common.block.BeardMossBlock;
-import com.teamaurora.bayou_blues.common.block.BeardMossBlockBlock;
-import com.teamaurora.bayou_blues.common.block.HangingCypressLeavesBlock;
+import com.teamaurora.bayou_blues.common.block.*;
 import com.teamaurora.bayou_blues.common.block.thatch.ThatchBlock;
 import com.teamaurora.bayou_blues.common.block.thatch.ThatchSlabBlock;
 import com.teamaurora.bayou_blues.common.block.thatch.ThatchStairBlock;
@@ -16,10 +13,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.LeavesBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
@@ -49,16 +43,27 @@ public class BayouBluesBlocks {
     public static final Supplier<Block> CYPRESS_DOOR = registerWoodsetBlock("cypress_door", CYPRESS::door, CreativeModeTab.TAB_REDSTONE, Blocks.OAK_DOOR);
     public static final Supplier<Block> CYPRESS_TRAPDOOR = registerWoodsetBlock("cypress_trapdoor", CYPRESS::trapdoor, CreativeModeTab.TAB_REDSTONE, Blocks.OAK_TRAPDOOR);
 
+
+    /* Other Cypress Blocks */
+
     public static final Supplier<Block> HANGING_CYPRESS_LEAVES = registerBlock("hanging_cypress_leaves", () -> new HangingCypressLeavesBlock(Properties.CYPRESS_LEAVES), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+
+
+    /* Lilies */
+
+
+    /* Algae */
 
     public static final Supplier<Block> ALGAE = registerBlockNoItem("algae", () -> new AlgaeBlock(Properties.ALGAE));
     public static final Supplier<Block> ALGAE_THATCH = registerBlock("algae_thatch", () -> new ThatchBlock(Properties.ALGAE_THATCH), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS));
     public static final Supplier<Block> ALGAE_THATCH_SLAB = registerBlock("algae_thatch_slab", () -> new ThatchSlabBlock(Properties.ALGAE_THATCH), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS));
     public static final Supplier<Block> ALGAE_THATCH_STAIRS = registerBlock("algae_thatch_stairs" ,() -> new ThatchStairBlock(BayouBluesBlocks.ALGAE_THATCH.get().defaultBlockState(), Properties.ALGAE_THATCH), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS));
 
+
+    /* Other */
+
     public static final Supplier<Block> BEARD_MOSS_BLOCK = registerFuelBlock("beard_moss_block", () -> new BeardMossBlockBlock(Properties.BEARD_MOSS_BLOCK), 800, new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
     public static final Supplier<Block> BEARD_MOSS = registerFuelBlock("beard_moss", () -> new BeardMossBlock(Properties.BEARD_MOSS), 800, new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-
 
     private static Supplier<Block> registerBlock(String id, Supplier<Block> block, Item.Properties properties) {
         Supplier<Block> register = BLOCKS.register(id, block);
@@ -85,6 +90,8 @@ public class BayouBluesBlocks {
 
     public static final class Properties {
         public static final BlockBehaviour.Properties CYPRESS_LEAVES = BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES);
+        public static final BlockBehaviour.Properties LILY = BlockBehaviour.Properties.copy(Blocks.LILY_PAD);
+        public static final BlockBehaviour.Properties POTTED_LILY = BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM);
         public static final BlockBehaviour.Properties ALGAE = BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.LILY_PAD).noOcclusion().noCollission();
         public static final BlockBehaviour.Properties ALGAE_THATCH = BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.COLOR_LIGHT_GREEN).strength(0.5F).sound(SoundType.GRASS).noOcclusion();
         public static final BlockBehaviour.Properties BEARD_MOSS_BLOCK = BlockBehaviour.Properties.of(Material.PLANT).strength(0.1F).sound(SoundType.MOSS);

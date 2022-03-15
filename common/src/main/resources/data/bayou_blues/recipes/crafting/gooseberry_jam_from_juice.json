@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:honey_bottle"
+    },
+    {
+      "item": "bayou_blues:gooseberry_juice"
+    },
+    {
+      "item": "bayou_blues:gooseberry_juice"
+    },
+    {
+      "item": "bayou_blues:gooseberry_juice"
+    }
+  ],
+  "result": {
+    "item": "bayou_blues:gooseberry_jam",
+    "count": 3
+  }
+}

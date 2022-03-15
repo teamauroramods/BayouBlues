@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "cookie",
+  "pattern": [
+    "#X",
+    "X"
+  ],
+  "key": {
+    "#": {
+      "item": "bayou_blues:gooseberry_jam"
+    },
+    "X": {
+      "item": "minecraft:wheat"
+    }
+  },
+  "result": {
+    "item": "bayou_blues:gooseberry_jam_cookie",
+    "count": 8
+  },
+  "conditions": [
+    {
+      "type": "abnormals_core:quark_flag",
+      "flag": "bent_recipes"
+    }
+  ]
+}

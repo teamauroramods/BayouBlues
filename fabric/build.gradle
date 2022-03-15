@@ -30,7 +30,7 @@ loom {
             runDir "build/datagen"
         }
     }
-//    accessWidenerPath.set(accessWidenerFile)
+    accessWidenerPath.set(accessWidenerFile)
 }
 
 sourceSets.main.resources {
