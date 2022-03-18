@@ -12,11 +12,13 @@ public class ThatchBlock extends Block {
         super(properties);
     }
 
-    public float getAmbientOcclusionLightLevel(BlockState state, BlockGetter worldIn, BlockPos pos) {
+    @Override
+    public float getShadeBrightness(BlockState state, BlockGetter worldIn, BlockPos pos) {
         return 1.0F;
     }
 
-    public boolean isTranslucent(BlockState state, BlockGetter reader, BlockPos pos) {
+    @Override
+    public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
         return true;
     }
 }
