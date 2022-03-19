@@ -14,7 +14,7 @@
   <a href="https://github.com/teamauroramods/BayouBlues/blob/1.18.x/LICENSE"><img src="https://img.shields.io/badge/License-All%20rights%20reserved-red.svg?style=for-the-badge&color=8c8424&labelColor=74bc2c"></a>
 </p>
 <p align="center">
-  <img src="https://img.shields.io/badge/-Forge-orange?style=for-the-badge&color=e04e14">
+  <img src="https://img.shields.io/badge/-Downloads-orange?style=for-the-badge&color=e04e14">
   <a href="https://www.curseforge.com/minecraft/mc-mods/bayou-blues"><img src="http://cf.way2muchnoise.eu/452344.svg?badge_style=for_the_badge"></a>
   <a href="https://www.curseforge.com/minecraft/mc-mods/bayou-blues"><img src="http://cf.way2muchnoise.eu/versions/452344.svg?badge_style=for_the_badge"></a>
 </p>
