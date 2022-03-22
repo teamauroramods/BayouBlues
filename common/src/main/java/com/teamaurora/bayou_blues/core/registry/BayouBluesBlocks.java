@@ -48,9 +48,10 @@ public class BayouBluesBlocks {
 
     public static final Supplier<Block> HANGING_CYPRESS_LEAVES = registerBlock("hanging_cypress_leaves", () -> new HangingCypressLeavesBlock(Properties.CYPRESS_LEAVES), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
 
+    public static final Supplier<Block> CYPRESS_KNEE = registerBlock("cypress_knee", () -> new CypressKneeBlock(Properties.CYPRESS_KNEE), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> LARGE_CYPRESS_KNEE = registerBlock("large_cypress_knee", () -> new DoubleCypressKneeBlock(Properties.CYPRESS_KNEE), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
 
     /* Lilies */
-
 
     /* Algae */
 
@@ -90,6 +91,7 @@ public class BayouBluesBlocks {
 
     public static final class Properties {
         public static final BlockBehaviour.Properties CYPRESS_LEAVES = BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES);
+        public static final BlockBehaviour.Properties CYPRESS_KNEE = BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).strength(2.0F).sound(SoundType.WOOD).noOcclusion();
         public static final BlockBehaviour.Properties LILY = BlockBehaviour.Properties.copy(Blocks.LILY_PAD);
         public static final BlockBehaviour.Properties POTTED_LILY = BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM);
         public static final BlockBehaviour.Properties ALGAE = BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.LILY_PAD).noOcclusion().noCollission();

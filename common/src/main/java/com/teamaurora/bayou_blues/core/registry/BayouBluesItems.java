@@ -31,7 +31,6 @@ public class BayouBluesItems {
 
     /* Lilies */
 
-
     /* Other */
 
     public static final Supplier<Item> ALGAE = registerItem("algae", () -> new AlgaeItem(BayouBluesBlocks.ALGAE.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));

@@ -18,30 +18,35 @@ public class BayouBlues {
             .build();
 
     public static void onClientInit() {
-        RenderTypeRegistry.register(BayouBluesBlocks.HANGING_CYPRESS_LEAVES.get(), RenderType.cutoutMipped());
-
-        RenderTypeRegistry.register(BayouBluesBlocks.ALGAE.get(), RenderType.cutout());
-        RenderTypeRegistry.register(BayouBluesBlocks.ALGAE_THATCH.get(), RenderType.cutout());
-        RenderTypeRegistry.register(BayouBluesBlocks.ALGAE_THATCH_SLAB.get(), RenderType.cutout());
-        RenderTypeRegistry.register(BayouBluesBlocks.ALGAE_THATCH_STAIRS.get(), RenderType.cutout());
-
-
-        RenderTypeRegistry.register(BayouBluesBlocks.BEARD_MOSS_BLOCK.get(), RenderType.cutout());
-        RenderTypeRegistry.register(BayouBluesBlocks.BEARD_MOSS.get(), RenderType.cutout());
     }
 
     public static void onClientPostInit(Platform.ModSetupContext ctx) {
+        ctx.enqueueWork(() -> {
+            RenderTypeRegistry.register(BayouBluesBlocks.HANGING_CYPRESS_LEAVES.get(), RenderType.cutoutMipped());
+
+            RenderTypeRegistry.register(BayouBluesBlocks.ALGAE.get(), RenderType.cutout());
+            RenderTypeRegistry.register(BayouBluesBlocks.ALGAE_THATCH.get(), RenderType.cutout());
+            RenderTypeRegistry.register(BayouBluesBlocks.ALGAE_THATCH_SLAB.get(), RenderType.cutout());
+            RenderTypeRegistry.register(BayouBluesBlocks.ALGAE_THATCH_STAIRS.get(), RenderType.cutout());
+
+            RenderTypeRegistry.register(BayouBluesBlocks.CYPRESS_KNEE.get(), RenderType.cutout());
+            RenderTypeRegistry.register(BayouBluesBlocks.LARGE_CYPRESS_KNEE.get(), RenderType.cutout());
+
+            RenderTypeRegistry.register(BayouBluesBlocks.BEARD_MOSS_BLOCK.get(), RenderType.cutout());
+            RenderTypeRegistry.register(BayouBluesBlocks.BEARD_MOSS.get(), RenderType.cutout());
+        });
     }
 
     public static void onCommonInit() {
-        BayouBluesItems.ITEMS.register(BayouBlues.PLATFORM);
         BayouBluesBlocks.BLOCKS.register(BayouBlues.PLATFORM);
-
-        StrippingRegistry.register(BayouBluesBlocks.CYPRESS_LOG.get(), BayouBluesBlocks.STRIPPED_CYPRESS_LOG.get());
-        StrippingRegistry.register(BayouBluesBlocks.CYPRESS_WOOD.get(), BayouBluesBlocks.STRIPPED_CYPRESS_WOOD.get());
+        BayouBluesItems.ITEMS.register(BayouBlues.PLATFORM);
     }
 
     public static void onCommonPostInit(Platform.ModSetupContext ctx) {
+        ctx.enqueueWork(() -> {
+            StrippingRegistry.register(BayouBluesBlocks.CYPRESS_LOG.get(), BayouBluesBlocks.STRIPPED_CYPRESS_LOG.get());
+            StrippingRegistry.register(BayouBluesBlocks.CYPRESS_WOOD.get(), BayouBluesBlocks.STRIPPED_CYPRESS_WOOD.get());
+        });
     }
 
     public static void onDataInit(Platform.DataSetupContext ctx) {
