@@ -14,6 +14,11 @@ import net.minecraft.world.level.levelgen.feature.configurations.TreeConfigurati
 
 import java.util.Random;
 
+/**
+ * @author JustinPlayzz
+ * @author Steven
+ * @author ebo2022
+ */
 public final class TreeUtil {
     public static void placeDirectionalLogAt(LevelWriter level, BlockPos pos, Direction direction, Random rand, TreeConfiguration config) {
         setForcedState(level, pos, config.trunkProvider.getState(rand, pos).setValue(RotatedPillarBlock.AXIS, direction.getAxis()));

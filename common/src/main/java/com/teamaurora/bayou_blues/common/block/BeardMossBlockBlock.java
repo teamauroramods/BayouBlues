@@ -14,6 +14,11 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 
+/**
+ * @author JustinPlayzz
+ * @author Steven
+ * @author ebo2022
+ */
 @SuppressWarnings("deprecation")
 public class BeardMossBlockBlock extends Block {
     public static final BooleanProperty PERSISTENT = BlockStateProperties.PERSISTENT;

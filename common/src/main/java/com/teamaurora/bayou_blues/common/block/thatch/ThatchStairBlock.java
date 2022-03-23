@@ -6,16 +6,21 @@ import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 
+/**
+ * @author JustinPlayzz
+ */
 public class ThatchStairBlock extends StairBlock {
     public ThatchStairBlock(BlockState state, BlockBehaviour.Properties properties) {
         super(state, properties);
     }
 
-    public float getAmbientOcclusionLightLevel(BlockState state, BlockGetter worldIn, BlockPos pos) {
+    @Override
+    public float getShadeBrightness(BlockState state, BlockGetter worldIn, BlockPos pos) {
         return 1.0F;
     }
 
-    public boolean isTranslucent(BlockState state, BlockGetter reader, BlockPos pos) {
+    @Override
+    public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
         return true;
     }
 }

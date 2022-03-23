@@ -18,6 +18,11 @@ import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import java.util.*;
 import java.util.function.BiConsumer;
 
+/**
+ * @author JustinPlayzz
+ * @author Steven
+ * @author ebo2022
+ */
 public class CypressFeature extends Feature<TreeConfiguration> {
     public CypressFeature(Codec<TreeConfiguration> config) {
         super(config);

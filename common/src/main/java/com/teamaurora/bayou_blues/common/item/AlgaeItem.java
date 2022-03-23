@@ -16,6 +16,11 @@ import net.minecraft.world.phys.BlockHitResult;
 
 import java.util.function.Supplier;
 
+/**
+ * @author JustinPlayzz
+ * @author Steven
+ * @author ebo2022
+ */
 public class AlgaeItem extends BlockItem {
     public AlgaeItem(Block blockIn, Item.Properties properties) { super(blockIn, properties); }
 

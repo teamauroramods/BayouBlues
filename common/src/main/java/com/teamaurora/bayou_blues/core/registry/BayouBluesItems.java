@@ -14,6 +14,9 @@ import net.minecraft.world.item.Item;
 
 import java.util.function.Supplier;
 
+/**
+ * @author ebo2022
+ */
 public class BayouBluesItems {
     public static final PollinatedRegistry<Item> ITEMS = PollinatedRegistry.create(Registry.ITEM, BayouBlues.MOD_ID);
 

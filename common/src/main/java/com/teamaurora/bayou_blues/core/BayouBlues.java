@@ -10,12 +10,10 @@ import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
-import net.minecraft.world.level.block.Blocks;
 
-
-import java.util.Arrays;
-import java.util.List;
-
+/**
+ * @author ebo2022
+ */
 public class BayouBlues {
     public static final String MOD_ID = "bayou_blues";
     public static final Platform PLATFORM = Platform.builder(MOD_ID)

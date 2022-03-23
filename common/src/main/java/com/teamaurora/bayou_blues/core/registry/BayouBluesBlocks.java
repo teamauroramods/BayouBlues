@@ -20,6 +20,9 @@ import net.minecraft.world.level.material.MaterialColor;
 
 import java.util.function.Supplier;
 
+/**
+ * @author ebo2022
+ */
 public class BayouBluesBlocks {
 
     public static final PollinatedRegistry<Block> BLOCKS = PollinatedRegistry.create(Registry.BLOCK, BayouBlues.MOD_ID);

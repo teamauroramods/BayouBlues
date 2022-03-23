@@ -6,6 +6,11 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 
+/**
+ * @author JustinPlayzz
+ * @author Steven
+ * @author ebo2022
+ */
 public class JamItem extends DrinkItem {
     public JamItem(Item.Properties properties) {
         super(properties);

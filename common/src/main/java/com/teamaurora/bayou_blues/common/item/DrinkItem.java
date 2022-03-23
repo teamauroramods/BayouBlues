@@ -11,7 +11,11 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 
-
+/**
+ * @author JustinPlayzz
+ * @author Steven
+ * @author ebo2022
+ */
 public class DrinkItem extends Item {
     public DrinkItem(Item.Properties properties) {
         super(properties);

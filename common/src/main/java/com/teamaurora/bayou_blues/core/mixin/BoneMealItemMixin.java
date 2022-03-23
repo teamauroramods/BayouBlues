@@ -19,6 +19,10 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+/**
+ * @author JustinPlayzz
+ * @author ebo2022
+ */
 @Mixin(BoneMealItem.class)
 public class BoneMealItemMixin {
     @Inject(method = "useOn", at = @At("HEAD"),cancellable = true)

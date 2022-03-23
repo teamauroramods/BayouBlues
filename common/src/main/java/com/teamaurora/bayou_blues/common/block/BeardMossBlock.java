@@ -23,6 +23,11 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import java.util.Random;
 
+/**
+ * @author JustinPlayzz
+ * @author Steven
+ * @author ebo2022
+ */
 @SuppressWarnings("deprecation")
 public class BeardMossBlock extends Block implements BonemealableBlock {
     public static final EnumProperty<DoubleBlockHalf> HALF = BlockStateProperties.DOUBLE_BLOCK_HALF;
