@@ -6,17 +6,12 @@ import gg.moonflower.pollen.api.platform.Platform;
 import gg.moonflower.pollen.api.registry.StrippingRegistry;
 import gg.moonflower.pollen.api.registry.client.ColorRegistry;
 import gg.moonflower.pollen.api.registry.client.RenderTypeRegistry;
-import net.minecraft.client.color.block.BlockColor;
-import net.minecraft.client.color.block.BlockColors;
-import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.core.BlockPos;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.FoliageColor;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.GrassColor;
+import net.minecraft.world.level.block.Blocks;
+
 
 import java.util.Arrays;
 import java.util.List;
@@ -32,12 +27,10 @@ public class BayouBlues {
             .build();
 
     public static void onClientInit() {
-        ColorRegistry.register((state, level, pos, tintIndex) ->
-        {
-            return level != null && pos != null ? BiomeColors.getAverageFoliageColor(level, pos) : FoliageColor.getDefaultColor();}, BayouBluesBlocks.CYPRESS_LEAVES, BayouBluesBlocks.HANGING_CYPRESS_LEAVES);
-        ColorRegistry.register((stack, tintIndex) -> {
-            return FoliageColor.getDefaultColor();
-        }, BayouBluesBlocks.CYPRESS_LEAVES, BayouBluesBlocks.HANGING_CYPRESS_LEAVES);
+        ColorRegistry.register((state, level, pos, tintIndex) -> {return level != null && pos != null ? BiomeColors.getAverageFoliageColor(level, pos) : FoliageColor.getDefaultColor();}, BayouBluesBlocks.CYPRESS_LEAVES, BayouBluesBlocks.HANGING_CYPRESS_LEAVES);
+        ColorRegistry.register((stack, tintIndex) -> {return FoliageColor.getDefaultColor();}, BayouBluesBlocks.CYPRESS_LEAVES, BayouBluesBlocks.HANGING_CYPRESS_LEAVES);
+        ColorRegistry.register((state, level, pos, tintIndex) -> {return level != null && pos != null ? BiomeColors.getAverageGrassColor(level, pos) : GrassColor.get(0.5D, 1.0D);}, BayouBluesBlocks.GIANT_FERN);
+        ColorRegistry.register((stack, tintIndex) -> {return GrassColor.get(0.5D, 1.0D);}, BayouBluesBlocks.GIANT_FERN);
     }
 
     public static void onClientPostInit(Platform.ModSetupContext ctx) {
@@ -51,15 +44,15 @@ public class BayouBlues {
 
             RenderTypeRegistry.register(BayouBluesBlocks.CYPRESS_KNEE.get(), RenderType.cutout());
             RenderTypeRegistry.register(BayouBluesBlocks.LARGE_CYPRESS_KNEE.get(), RenderType.cutout());
-
             RenderTypeRegistry.register(BayouBluesBlocks.BEARD_MOSS_BLOCK.get(), RenderType.cutout());
             RenderTypeRegistry.register(BayouBluesBlocks.BEARD_MOSS.get(), RenderType.cutout());
+            RenderTypeRegistry.register(BayouBluesBlocks.GIANT_FERN.get(), RenderType.cutout());
         });
     }
 
     public static void onCommonInit() {
-        BayouBluesItems.ITEMS.register(BayouBlues.PLATFORM);
-        BayouBluesBlocks.BLOCKS.register(BayouBlues.PLATFORM);
+            BayouBluesItems.ITEMS.register(BayouBlues.PLATFORM);
+            BayouBluesBlocks.BLOCKS.register(BayouBlues.PLATFORM);
     }
 
     public static void onCommonPostInit(Platform.ModSetupContext ctx) {

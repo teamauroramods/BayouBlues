@@ -65,6 +65,7 @@ public class BayouBluesBlocks {
 
     public static final Supplier<Block> BEARD_MOSS_BLOCK = registerFuelBlock("beard_moss_block", () -> new BeardMossBlockBlock(Properties.BEARD_MOSS_BLOCK), 800, new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
     public static final Supplier<Block> BEARD_MOSS = registerFuelBlock("beard_moss", () -> new BeardMossBlock(Properties.BEARD_MOSS), 800, new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> GIANT_FERN = registerBlock("giant_fern", () -> new DoublePlantBlock(Properties.GIANT_FERN), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
 
     private static Supplier<Block> registerBlock(String id, Supplier<Block> block, Item.Properties properties) {
         Supplier<Block> register = BLOCKS.register(id, block);
@@ -98,5 +99,6 @@ public class BayouBluesBlocks {
         public static final BlockBehaviour.Properties ALGAE_THATCH = BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.COLOR_LIGHT_GREEN).strength(0.5F).sound(SoundType.GRASS).noOcclusion();
         public static final BlockBehaviour.Properties BEARD_MOSS_BLOCK = BlockBehaviour.Properties.of(Material.PLANT).strength(0.1F).sound(SoundType.MOSS);
         public static final BlockBehaviour.Properties BEARD_MOSS = BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.MOSS).noOcclusion().noCollission().randomTicks();
+        public static final BlockBehaviour.Properties GIANT_FERN = BlockBehaviour.Properties.copy(Blocks.TALL_GRASS);
     }
 }

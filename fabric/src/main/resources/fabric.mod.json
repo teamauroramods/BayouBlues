@@ -13,6 +13,10 @@
   },
   "license": "GPLv3",
   "environment": "*",
+  "mixins": [
+    "bayou_blues-common.mixins.json",
+    "bayou_blues.mixins.json"
+  ],
   "entrypoints": {
     "main": [
       "com.teamaurora.bayou_blues.core.fabric.BayouBluesFabric"
