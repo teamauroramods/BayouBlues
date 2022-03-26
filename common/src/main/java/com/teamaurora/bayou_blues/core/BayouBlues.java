@@ -6,10 +6,13 @@ import gg.moonflower.pollen.api.platform.Platform;
 import gg.moonflower.pollen.api.registry.StrippingRegistry;
 import gg.moonflower.pollen.api.registry.client.ColorRegistry;
 import gg.moonflower.pollen.api.registry.client.RenderTypeRegistry;
+import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 
 /**
  * @author ebo2022
@@ -29,6 +32,7 @@ public class BayouBlues {
         ColorRegistry.register((stack, tintIndex) -> {return FoliageColor.getDefaultColor();}, BayouBluesBlocks.CYPRESS_LEAVES, BayouBluesBlocks.HANGING_CYPRESS_LEAVES);
         ColorRegistry.register((state, level, pos, tintIndex) -> {return level != null && pos != null ? BiomeColors.getAverageGrassColor(level, pos) : GrassColor.get(0.5D, 1.0D);}, BayouBluesBlocks.GIANT_FERN);
         ColorRegistry.register((stack, tintIndex) -> {return GrassColor.get(0.5D, 1.0D);}, BayouBluesBlocks.GIANT_FERN);
+        ColorRegistry.register((state, level, pos, tintIndex) -> {return level != null && pos != null ? 2129968 : 7455580;}, BayouBluesBlocks.BLUE_LILY, BayouBluesBlocks.LIGHT_GRAY_LILY, BayouBluesBlocks.CYAN_LILY, BayouBluesBlocks.LIGHT_BLUE_LILY, BayouBluesBlocks.MAGENTA_LILY, BayouBluesBlocks.PINK_LILY, BayouBluesBlocks.PURPLE_LILY, BayouBluesBlocks.WHITE_LILY);
     }
 
     public static void onClientPostInit(Platform.ModSetupContext ctx) {
@@ -42,6 +46,18 @@ public class BayouBlues {
 
             RenderTypeRegistry.register(BayouBluesBlocks.CYPRESS_KNEE.get(), RenderType.cutout());
             RenderTypeRegistry.register(BayouBluesBlocks.LARGE_CYPRESS_KNEE.get(), RenderType.cutout());
+
+            RenderTypeRegistry.register(BayouBluesBlocks.BLUE_LILY.get(), RenderType.cutout());
+            RenderTypeRegistry.register(BayouBluesBlocks.LIGHT_GRAY_LILY.get(), RenderType.cutout());
+            RenderTypeRegistry.register(BayouBluesBlocks.CYAN_LILY.get(), RenderType.cutout());
+            RenderTypeRegistry.register(BayouBluesBlocks.LIGHT_BLUE_LILY.get(), RenderType.cutout());
+            RenderTypeRegistry.register(BayouBluesBlocks.MAGENTA_LILY.get(), RenderType.cutout());
+            RenderTypeRegistry.register(BayouBluesBlocks.PINK_LILY.get(), RenderType.cutout());
+            RenderTypeRegistry.register(BayouBluesBlocks.PURPLE_LILY.get(), RenderType.cutout());
+            RenderTypeRegistry.register(BayouBluesBlocks.WHITE_LILY.get(), RenderType.cutout());
+
+
+
             RenderTypeRegistry.register(BayouBluesBlocks.BEARD_MOSS_BLOCK.get(), RenderType.cutout());
             RenderTypeRegistry.register(BayouBluesBlocks.BEARD_MOSS.get(), RenderType.cutout());
             RenderTypeRegistry.register(BayouBluesBlocks.GIANT_FERN.get(), RenderType.cutout());
@@ -49,8 +65,8 @@ public class BayouBlues {
     }
 
     public static void onCommonInit() {
-            BayouBluesItems.ITEMS.register(BayouBlues.PLATFORM);
-            BayouBluesBlocks.BLOCKS.register(BayouBlues.PLATFORM);
+        BayouBluesItems.ITEMS.register(BayouBlues.PLATFORM);
+        BayouBluesBlocks.BLOCKS.register(BayouBlues.PLATFORM);
     }
 
     public static void onCommonPostInit(Platform.ModSetupContext ctx) {

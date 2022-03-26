@@ -22,3 +22,11 @@ publishing {
         }
     }
 }
+
+afterEvaluate {
+    tasks {
+        remapJar {
+            remapAccessWidener.set(false)
+        }
+    }
+}

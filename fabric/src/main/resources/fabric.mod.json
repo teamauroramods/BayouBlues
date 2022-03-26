@@ -12,10 +12,12 @@
     "sources": "https://github.com/teamauroramods/BayouBlues/"
   },
   "license": "GPLv3",
+  "icon": "icon.png",
   "environment": "*",
+  "accessWidener" : "${id}.accesswidener",
   "mixins": [
-    "bayou_blues-common.mixins.json",
-    "bayou_blues.mixins.json"
+    "${id}-common.mixins.json",
+    "${id}.mixins.json"
   ],
   "entrypoints": {
     "main": [

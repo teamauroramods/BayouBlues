@@ -8,7 +8,6 @@ import com.teamaurora.bayou_blues.core.BayouBlues;
 import gg.moonflower.pollen.api.registry.PollinatedRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BottleItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 
@@ -34,9 +33,9 @@ public class BayouBluesItems {
 
     /* Lilies */
 
+
     /* Other */
 
-    public static final Supplier<Item> ALGAE = registerItem("algae", () -> new AlgaeItem(BayouBluesBlocks.ALGAE.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
 
     public static final class Foods {
         public static final FoodProperties GOOSEBERRIES = new FoodProperties.Builder().nutrition(2).saturationMod(0.2F).build();

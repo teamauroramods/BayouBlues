@@ -19,6 +19,8 @@ loom {
     mixin {
         defaultRefmapName = "${project.mod_id}-refmap.json"
     }
+    accessWidenerPath.set(accessWidenerFile)
+
     runs {
         datagen {
             server()
@@ -30,7 +32,6 @@ loom {
             runDir "build/datagen"
         }
     }
-    accessWidenerPath.set(accessWidenerFile)
 }
 
 sourceSets.main.resources {
@@ -60,13 +61,13 @@ dependencies {
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 }
 
-//task copyAccessWidener(type: Copy) {
-//    from(accessWidenerFile)
-//    into(generatedResources)
-//}
+task copyAccessWidener(type: Copy) {
+    from(accessWidenerFile)
+    into(generatedResources)
+}
 
 processResources {
-//    dependsOn(copyAccessWidener)
+    dependsOn(copyAccessWidener)
     inputs.property "id", rootProject.mod_id
     inputs.property "name", rootProject.mod_name
     inputs.property "version", rootProject.mod_version

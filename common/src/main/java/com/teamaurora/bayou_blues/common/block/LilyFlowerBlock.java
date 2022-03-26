@@ -38,13 +38,10 @@ public class LilyFlowerBlock extends FlowerBlock {
     protected static final VoxelShape LILY_PAD_AABB = Block.box(1.0D, 0.0D, 1.0D, 15.0D, 1.5D, 15.0D);
     protected static final VoxelShape LILY_FLOWER_AABB = Block.box(3.0D, 1.5D, 3.0D, 13.0D, 13.D, 13.0D);
     protected static final VoxelShape SHAPE = Shapes.or(LILY_PAD_AABB, LILY_FLOWER_AABB);
-    private final Item item;
-
     public static List<LilyFlowerBlock> LILY_FLOWERS = new ArrayList<>();
 
-    public LilyFlowerBlock(Item item, BlockBehaviour.Properties builder) {
+    public LilyFlowerBlock(BlockBehaviour.Properties builder) {
         super(MobEffects.POISON, 12, builder);
-        this.item = item;
         LILY_FLOWERS.add(this);
     }
 
@@ -57,11 +54,6 @@ public class LilyFlowerBlock extends FlowerBlock {
     @SuppressWarnings("deprecation")
     public VoxelShape getCollisionShape(BlockState state, BlockGetter worldIn, BlockPos pos, CollisionContext context) {
         return LILY_PAD_AABB;
-    }
-
-    @Override
-    public ItemStack getCloneItemStack(BlockGetter worldIn, BlockPos pos, BlockState state) {
-        return new ItemStack(this.item);
     }
 
     public static Block getRandomLily(Random rand) {

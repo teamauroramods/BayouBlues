@@ -6,6 +6,7 @@ import com.teamaurora.bayou_blues.common.block.thatch.ThatchSlabBlock;
 import com.teamaurora.bayou_blues.common.block.thatch.ThatchStairBlock;
 import com.teamaurora.bayou_blues.common.item.FollowItemLike;
 import com.teamaurora.bayou_blues.common.item.FuelBlockItem;
+import com.teamaurora.bayou_blues.common.item.LilyItem;
 import com.teamaurora.bayou_blues.core.BayouBlues;
 import com.teamaurora.bayou_blues.core.registry.util.Woodset;
 import gg.moonflower.pollen.api.registry.PollinatedRegistry;
@@ -18,6 +19,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 
+import java.util.List;
 import java.util.function.Supplier;
 
 /**
@@ -56,6 +58,26 @@ public class BayouBluesBlocks {
 
     /* Lilies */
 
+    public static final Supplier<Block> BLUE_LILY = registerLily("blue_lily");
+    public static final Supplier<Block> LIGHT_GRAY_LILY = registerLily("light_gray_lily");
+    public static final Supplier<Block> CYAN_LILY = registerLily("cyan_lily");
+    public static final Supplier<Block> LIGHT_BLUE_LILY = registerLily("light_blue_lily");
+    public static final Supplier<Block> MAGENTA_LILY = registerLily("magenta_lily");
+    public static final Supplier<Block> PINK_LILY = registerLily("pink_lily");
+    public static final Supplier<Block> PURPLE_LILY = registerLily("purple_lily");
+    public static final Supplier<Block> WHITE_LILY = registerLily("white_lily");
+
+    public static final Supplier<Block> POTTED_BLUE_LILY = registerPotted("potted_blue_lily", BLUE_LILY);
+    public static final Supplier<Block> POTTED_LIGHT_GRAY_LILY = registerPotted("potted_light_gray_lily", LIGHT_GRAY_LILY);
+    public static final Supplier<Block> POTTED_CYAN_LILY = registerPotted("potted_cyan_lily", CYAN_LILY);
+    public static final Supplier<Block> POTTED_LIGHT_BLUE_LILY = registerPotted("potted_light_blue_lily", LIGHT_BLUE_LILY);
+    public static final Supplier<Block> POTTED_MAGENTA_LILY = registerPotted("potted_magenta_lily", MAGENTA_LILY);
+    public static final Supplier<Block> POTTED_PINK_LILY = registerPotted("potted_pink_lily", PINK_LILY);
+    public static final Supplier<Block> POTTED_PURPLE_LILY = registerPotted("potted_purple_lily", PURPLE_LILY);
+    public static final Supplier<Block> POTTED_WHITE_LILY = registerPotted("potted_white_lily", WHITE_LILY);
+
+
+
     /* Algae */
 
     public static final Supplier<Block> ALGAE = registerBlockNoItem("algae", () -> new AlgaeBlock(Properties.ALGAE));
@@ -90,6 +112,17 @@ public class BayouBluesBlocks {
     private static Supplier<Block> registerWoodsetBlock(String id, Supplier<Block> block, CreativeModeTab tab, Block followBlock) {
         Supplier<Block> register = BLOCKS.register(id, block);
         BayouBluesItems.ITEMS.register(id, () -> new FollowItemLike(register.get(), new Item.Properties(), tab, followBlock));
+        return register;
+    }
+
+    private static Supplier<Block> registerLily(String id) {
+        Supplier<Block> register = BLOCKS.register(id, () -> new LilyFlowerBlock(Properties.LILY));
+        BayouBluesItems.ITEMS.register(id, () -> new LilyItem(register.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
+        return register;
+    }
+
+    private static Supplier<Block> registerPotted(String id, Supplier<Block> block) {
+        Supplier<Block> register = BLOCKS.register(id, () -> new FlowerPotBlock(block.get(), Properties.POTTED_LILY));
         return register;
     }
 

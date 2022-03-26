@@ -1,11 +1,7 @@
 package com.teamaurora.bayou_blues.core.mixin;
 
-import com.teamaurora.bayou_blues.common.block.LilyFlowerBlock;
 import com.teamaurora.bayou_blues.core.registry.BayouBluesBlocks;
 import net.minecraft.core.BlockPos;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.BoneMealItem;
 import net.minecraft.world.item.context.UseOnContext;
