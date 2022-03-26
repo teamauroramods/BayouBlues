@@ -46,6 +46,7 @@ public class BayouBlues {
 
             RenderTypeRegistry.register(BayouBluesBlocks.CYPRESS_KNEE.get(), RenderType.cutout());
             RenderTypeRegistry.register(BayouBluesBlocks.LARGE_CYPRESS_KNEE.get(), RenderType.cutout());
+            RenderTypeRegistry.register(BayouBluesBlocks.CYPRESS_BRANCH.get(), RenderType.cutout());
 
             RenderTypeRegistry.register(BayouBluesBlocks.BLUE_LILY.get(), RenderType.cutout());
             RenderTypeRegistry.register(BayouBluesBlocks.LIGHT_GRAY_LILY.get(), RenderType.cutout());
