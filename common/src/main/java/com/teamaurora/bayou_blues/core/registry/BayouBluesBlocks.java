@@ -4,6 +4,7 @@ import com.teamaurora.bayou_blues.common.block.*;
 import com.teamaurora.bayou_blues.common.block.thatch.ThatchBlock;
 import com.teamaurora.bayou_blues.common.block.thatch.ThatchSlabBlock;
 import com.teamaurora.bayou_blues.common.block.thatch.ThatchStairBlock;
+import com.teamaurora.bayou_blues.common.item.AlgaeItem;
 import com.teamaurora.bayou_blues.common.item.FollowItemLike;
 import com.teamaurora.bayou_blues.common.item.FuelBlockItem;
 import com.teamaurora.bayou_blues.common.item.LilyItem;
@@ -80,7 +81,7 @@ public class BayouBluesBlocks {
 
     /* Algae */
 
-    public static final Supplier<Block> ALGAE = registerBlockNoItem("algae", () -> new AlgaeBlock(Properties.ALGAE));
+    public static final Supplier<Block> ALGAE = registerAlgae("algae");
     public static final Supplier<Block> ALGAE_THATCH = registerBlock("algae_thatch", () -> new ThatchBlock(Properties.ALGAE_THATCH), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS));
     public static final Supplier<Block> ALGAE_THATCH_SLAB = registerBlock("algae_thatch_slab", () -> new ThatchSlabBlock(Properties.ALGAE_THATCH), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS));
     public static final Supplier<Block> ALGAE_THATCH_STAIRS = registerBlock("algae_thatch_stairs" ,() -> new ThatchStairBlock(BayouBluesBlocks.ALGAE_THATCH.get().defaultBlockState(), Properties.ALGAE_THATCH), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS));
@@ -123,6 +124,12 @@ public class BayouBluesBlocks {
 
     private static Supplier<Block> registerPotted(String id, Supplier<Block> block) {
         Supplier<Block> register = BLOCKS.register(id, () -> new FlowerPotBlock(block.get(), Properties.POTTED_LILY));
+        return register;
+    }
+
+    private static Supplier<Block> registerAlgae(String id) {
+        Supplier<Block> register = BLOCKS.register(id, () -> new AlgaeBlock(Properties.ALGAE));
+        BayouBluesItems.ITEMS.register(id, () -> new AlgaeItem(register.get(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
         return register;
     }
 
