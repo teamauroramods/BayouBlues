@@ -52,6 +52,7 @@ public class BayouBluesBlocks {
 
     /* Other Cypress Blocks */
 
+    public static final Supplier<Block> CYPRESS_LEAF_CARPET = registerBlock("cypress_leaf_carpet", () -> new LeafCarpetBlock(Properties.CYPRESS_LEAVES), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
     public static final Supplier<Block> HANGING_CYPRESS_LEAVES = registerBlock("hanging_cypress_leaves", () -> new HangingCypressLeavesBlock(Properties.CYPRESS_LEAVES), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
 
     public static final Supplier<Block> CYPRESS_KNEE = registerBlock("cypress_knee", () -> new CypressKneeBlock(Properties.CYPRESS_KNEE), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));

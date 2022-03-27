@@ -8,6 +8,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -21,7 +22,7 @@ import org.jetbrains.annotations.Nullable;
  * @author ebo2022
  */
 @SuppressWarnings("deprecation")
-public class HangingCypressLeavesBlock extends Block {
+public class HangingCypressLeavesBlock extends LeavesBlock {
     protected static final VoxelShape SHAPE = Block.box(1.0, 4.0, 1.0, 15.0, 16.0, 15.0);
 
     public HangingCypressLeavesBlock(BlockBehaviour.Properties properties) {
