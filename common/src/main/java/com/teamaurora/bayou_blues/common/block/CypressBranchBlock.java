@@ -36,10 +36,10 @@ import java.util.Random;
 public class CypressBranchBlock extends Block implements BonemealableBlock {
     public static final IntegerProperty AGE = BlockStateProperties.AGE_2;
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
-    protected static final VoxelShape SHAPE_NORTH = Block.box(4.0D, 4.0D, 3.0D, 12.0D, 12.0D, 16.0D);
-    protected static final VoxelShape SHAPE_EAST = Block.box(0.0D, 4.0D, 4.0D, 13.0D, 12.0D, 12.0D);
-    protected static final VoxelShape SHAPE_SOUTH = Block.box(4.0D, 4.0D, 0.0D, 12.0D, 12.0D, 13.0D);
-    protected static final VoxelShape SHAPE_WEST = Block.box(3.0D, 4.0D, 4.0D, 16.0D, 12.0D, 12.0D);
+    protected static final VoxelShape SHAPE_NORTH = Block.box(4.0D, 4.0D, 0.0D, 12.0D, 12.0D, 13.0D);
+    protected static final VoxelShape SHAPE_SOUTH = Block.box(4.0D, 4.0D, 3.0D, 12.0D, 12.0D, 16.0D);
+    protected static final VoxelShape SHAPE_EAST = Block.box(3.0D, 4.0D, 4.0D, 16.0D, 12.0D, 12.0D);
+    protected static final VoxelShape SHAPE_WEST = Block.box(0.0D, 4.0D, 4.0D, 13.0D, 12.0D, 12.0D);
 
     public CypressBranchBlock(BlockBehaviour.Properties properties) {
         super(properties);
@@ -66,13 +66,13 @@ public class CypressBranchBlock extends Block implements BonemealableBlock {
         switch (state.getValue(FACING)) {
             default:
             case NORTH:
-                return SHAPE_SOUTH;
-            case EAST:
-                return SHAPE_WEST;
-            case SOUTH:
                 return SHAPE_NORTH;
-            case WEST:
+            case EAST:
                 return SHAPE_EAST;
+            case SOUTH:
+                return SHAPE_SOUTH;
+            case WEST:
+                return SHAPE_WEST;
         }
     }
 
@@ -126,7 +126,7 @@ public class CypressBranchBlock extends Block implements BonemealableBlock {
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         if (!context.replacingClickedOnBlock()) {
-            BlockState blockstate = context.getLevel().getBlockState(context.getClickedPos().offset(context.getClickedFace().getOpposite().getNormal()));
+            BlockState blockstate = context.getLevel().getBlockState(context.getClickedPos().offset(context.getClickedFace().getNormal()));
             if (blockstate.is(this) && blockstate.getValue(FACING) == context.getClickedFace()) {
                 return null;
             }

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "bayou_blues:cyan_lily"
+    }
+  ],
+  "result": {
+    "item": "minecraft:cyan_dye"
+  }
+}

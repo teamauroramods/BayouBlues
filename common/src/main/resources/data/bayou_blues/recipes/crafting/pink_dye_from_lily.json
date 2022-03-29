@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "bayou_blues:pink_lily"
+    }
+  ],
+  "result": {
+    "item": "minecraft:pink_dye"
+  }
+}

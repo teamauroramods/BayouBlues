@@ -24,8 +24,10 @@ public final class TreeUtil {
         setForcedState(level, pos, config.trunkProvider.getState(rand, pos).setValue(RotatedPillarBlock.AXIS, direction.getAxis()));
     }
 
-    public static void placeLeafAt(LevelSimulatedRW level, BlockPos pos, Random rand, TreeConfiguration config) {
-
+    public static void placeLeafAt(LevelSimulatedRW world, BlockPos pos, Random rand, TreeConfiguration config) {
+        if (isAirOrLeaves(world, pos)) {
+            setForcedState(world, pos, config.foliageProvider.getState(rand, pos).setValue(LeavesBlock.DISTANCE, 1));
+        }
     }
 
     public static void setForcedState(LevelWriter world, BlockPos pos, BlockState state) {

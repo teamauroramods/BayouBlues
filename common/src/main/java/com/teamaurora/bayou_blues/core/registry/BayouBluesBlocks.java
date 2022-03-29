@@ -4,6 +4,7 @@ import com.teamaurora.bayou_blues.common.block.*;
 import com.teamaurora.bayou_blues.common.block.thatch.ThatchBlock;
 import com.teamaurora.bayou_blues.common.block.thatch.ThatchSlabBlock;
 import com.teamaurora.bayou_blues.common.block.thatch.ThatchStairBlock;
+import com.teamaurora.bayou_blues.common.block.trees.CypressTreeGrower;
 import com.teamaurora.bayou_blues.common.item.AlgaeItem;
 import com.teamaurora.bayou_blues.common.item.FollowItemLike;
 import com.teamaurora.bayou_blues.common.item.FuelBlockItem;
@@ -20,7 +21,6 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 
-import java.util.List;
 import java.util.function.Supplier;
 
 /**
@@ -39,6 +39,8 @@ public class BayouBluesBlocks {
     public static final Supplier<Block> CYPRESS_LOG = registerWoodsetBlock("cypress_log", CYPRESS::log, CreativeModeTab.TAB_BUILDING_BLOCKS, Blocks.OAK_LOG);
     public static final Supplier<Block> CYPRESS_WOOD = registerWoodsetBlock("cypress_wood", CYPRESS::wood, CreativeModeTab.TAB_BUILDING_BLOCKS, Blocks.OAK_WOOD);
     public static final Supplier<Block> CYPRESS_LEAVES = registerBlock("cypress_leaves", () -> new LeavesBlock(Properties.CYPRESS_LEAVES), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> CYPRESS_SAPLING = registerBlock("cypress_sapling", () -> new SaplingBlock(new CypressTreeGrower(), Properties.CYPRESS_SAPLING), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> POTTED_CYPRESS_SAPLING = registerPotted("potted_cypress_sapling", CYPRESS_SAPLING);
     public static final Supplier<Block> CYPRESS_PLANKS = registerWoodsetBlock("cypress_planks", CYPRESS::planks, CreativeModeTab.TAB_BUILDING_BLOCKS, Blocks.OAK_PLANKS);
     public static final Supplier<Block> CYPRESS_SLAB = registerWoodsetBlock("cypress_slab", CYPRESS::slab, CreativeModeTab.TAB_BUILDING_BLOCKS, Blocks.OAK_SLAB);
     public static final Supplier<Block> CYPRESS_STAIRS = registerWoodsetBlock("cypress_stairs", () -> CYPRESS.stairs(CYPRESS_PLANKS), CreativeModeTab.TAB_BUILDING_BLOCKS, Blocks.OAK_STAIRS);
@@ -78,7 +80,6 @@ public class BayouBluesBlocks {
     public static final Supplier<Block> POTTED_PINK_LILY = registerPotted("potted_pink_lily", PINK_LILY);
     public static final Supplier<Block> POTTED_PURPLE_LILY = registerPotted("potted_purple_lily", PURPLE_LILY);
     public static final Supplier<Block> POTTED_WHITE_LILY = registerPotted("potted_white_lily", WHITE_LILY);
-
 
 
     /* Algae */
@@ -125,7 +126,7 @@ public class BayouBluesBlocks {
     }
 
     private static Supplier<Block> registerPotted(String id, Supplier<Block> block) {
-        Supplier<Block> register = BLOCKS.register(id, () -> new FlowerPotBlock(block.get(), Properties.POTTED_LILY));
+        Supplier<Block> register = BLOCKS.register(id, () -> new FlowerPotBlock(block.get(), Properties.POTTED_PLANT));
         return register;
     }
 
@@ -137,10 +138,11 @@ public class BayouBluesBlocks {
 
     public static final class Properties {
         public static final BlockBehaviour.Properties CYPRESS_LEAVES = BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES);
+        public static final BlockBehaviour.Properties CYPRESS_SAPLING = BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING);
         public static final BlockBehaviour.Properties CYPRESS_KNEE = BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).strength(2.0F).sound(SoundType.WOOD).noOcclusion();
         public static final BlockBehaviour.Properties CYPRESS_BRANCH = BlockBehaviour.Properties.of(Material.PLANT).randomTicks().noCollission().sound(SoundType.BAMBOO_SAPLING);
         public static final BlockBehaviour.Properties LILY = BlockBehaviour.Properties.copy(Blocks.LILY_PAD);
-        public static final BlockBehaviour.Properties POTTED_LILY = BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM);
+        public static final BlockBehaviour.Properties POTTED_PLANT = BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM);
         public static final BlockBehaviour.Properties ALGAE = BlockBehaviour.Properties.of(Material.PLANT).instabreak().sound(SoundType.LILY_PAD).noOcclusion().noCollission();
         public static final BlockBehaviour.Properties ALGAE_THATCH = BlockBehaviour.Properties.of(Material.GRASS, MaterialColor.COLOR_LIGHT_GREEN).strength(0.5F).sound(SoundType.GRASS).noOcclusion();
         public static final BlockBehaviour.Properties BEARD_MOSS_BLOCK = BlockBehaviour.Properties.of(Material.PLANT).strength(0.1F).sound(SoundType.MOSS);

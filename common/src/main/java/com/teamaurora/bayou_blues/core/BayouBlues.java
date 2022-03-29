@@ -1,14 +1,13 @@
 package com.teamaurora.bayou_blues.core;
 
 import com.teamaurora.bayou_blues.core.registry.BayouBluesBlocks;
+import com.teamaurora.bayou_blues.core.registry.BayouBluesFeatures;
 import com.teamaurora.bayou_blues.core.registry.BayouBluesItems;
 import gg.moonflower.pollen.api.platform.Platform;
 import gg.moonflower.pollen.api.registry.StrippingRegistry;
 import gg.moonflower.pollen.api.registry.client.ColorRegistry;
 import gg.moonflower.pollen.api.registry.client.RenderTypeRegistry;
 import net.minecraft.client.renderer.BiomeColors;
-import net.minecraft.client.renderer.RenderBuffers;
-import net.minecraft.client.renderer.RenderStateShard;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
@@ -38,6 +37,8 @@ public class BayouBlues {
         ctx.enqueueWork(() -> {
             RenderTypeRegistry.register(BayouBluesBlocks.HANGING_CYPRESS_LEAVES.get(), RenderType.cutoutMipped());
             RenderTypeRegistry.register(BayouBluesBlocks.CYPRESS_LEAF_CARPET.get(), RenderType.cutout());
+            RenderTypeRegistry.register(BayouBluesBlocks.CYPRESS_SAPLING.get(), RenderType.cutout());
+            RenderTypeRegistry.register(BayouBluesBlocks.POTTED_CYPRESS_SAPLING.get(), RenderType.cutout());
 
             RenderTypeRegistry.register(BayouBluesBlocks.ALGAE.get(), RenderType.cutout());
             RenderTypeRegistry.register(BayouBluesBlocks.ALGAE_THATCH.get(), RenderType.cutout());
@@ -65,12 +66,16 @@ public class BayouBlues {
     public static void onCommonInit() {
         BayouBluesItems.ITEMS.register(BayouBlues.PLATFORM);
         BayouBluesBlocks.BLOCKS.register(BayouBlues.PLATFORM);
+        BayouBluesFeatures.FEATURES.register(BayouBlues.PLATFORM);
+        BayouBluesFeatures.CONFIGURED_FEATURES.register(BayouBlues.PLATFORM);
+        BayouBluesFeatures.TREE_DECORATOR_TYPES.register(BayouBlues.PLATFORM);
     }
 
     public static void onCommonPostInit(Platform.ModSetupContext ctx) {
         ctx.enqueueWork(() -> {
             StrippingRegistry.register(BayouBluesBlocks.CYPRESS_LOG.get(), BayouBluesBlocks.STRIPPED_CYPRESS_LOG.get());
             StrippingRegistry.register(BayouBluesBlocks.CYPRESS_WOOD.get(), BayouBluesBlocks.STRIPPED_CYPRESS_WOOD.get());
+            BayouBluesFeatures.Configured.registerConfiguredFeatures();
         });
     }
 
