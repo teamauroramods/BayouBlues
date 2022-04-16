@@ -7,9 +7,7 @@ import com.teamaurora.bayou_blues.common.util.TreeUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Vec3i;
-import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
@@ -18,24 +16,19 @@ import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import java.util.*;
 import java.util.function.BiConsumer;
 
-/**
- * @author JustinPlayzz
- * @author Steven
- * @author ebo2022
- */
 public class CypressFeature extends Feature<TreeConfiguration> {
     public CypressFeature(Codec<TreeConfiguration> config) {
         super(config);
     }
 
     @Override
-    public boolean place(FeaturePlaceContext<TreeConfiguration> context) {
-        int height = context.random().nextInt(5) + 9;
-        boolean bald = context.random().nextInt(15) == 0;
-        if (context.origin().getY() <= 0 || context.origin().getY() + height > context.level().getHeight() - 1) {
+    public boolean place(FeaturePlaceContext<TreeConfiguration> ctx) {
+        int height = ctx.random().nextInt(5) + 9;
+        boolean bald = ctx.random().nextInt(15) == 0;
+        if (ctx.origin().getY() <= -64 || ctx.origin().getY() + height > ctx.level().getHeight() - 1) {
             return false;
         }
-        if (!TreeUtil.isValidGround(context.level(), context.origin().below())) {
+        if (!TreeUtil.isValidGround(ctx.level(), ctx.origin().below())) {
             return false;
         }
 
@@ -43,51 +36,51 @@ public class CypressFeature extends Feature<TreeConfiguration> {
         List<BlockPos> leaves = new ArrayList<>();
 
         for (int i = 0; i <= height; i++) {
-            logs.add(new DirectionalBlockPos(context.origin().above(i), Direction.UP));
+            logs.add(new DirectionalBlockPos(ctx.origin().above(i), Direction.UP));
         }
-        int numBranches = context.random().nextInt(4) + 1;
+        int numBranches = ctx.random().nextInt(4) + 1;
         if (numBranches == 4) numBranches = 2;
         for (int i = 0; i < numBranches; i++) {
-            Direction dir = Direction.from2DDataValue(context.random().nextInt(4));
+            Direction dir = Direction.from2DDataValue(ctx.random().nextInt(4));
             int x;
             if (bald)
-                x = context.random().nextInt(height - 3) + 3;
+                x = ctx.random().nextInt(height - 3) + 3;
             else
-                x = context.random().nextInt(height - 5) + 3;
-            logs.add(new DirectionalBlockPos(context.origin().above(x).offset(dir.getNormal()), dir));
-            logs.add(new DirectionalBlockPos(context.origin().above(x).offset(dir.getStepX(), 2, 0), dir));
-            disc2H(context.origin().above(x).offset(dir.getStepX(),2, 0), leaves, context.random());
-            disc1(context.origin().above(x+1).offset(dir.getStepX(),2, 0), leaves);
+                x = ctx.random().nextInt(height - 5) + 3;
+            logs.add(new DirectionalBlockPos(ctx.origin().above(x).relative(dir), dir));
+            logs.add(new DirectionalBlockPos(ctx.origin().above(x).relative(dir, 2), dir));
+            disc2H(ctx.origin().above(x).relative(dir,2), leaves, ctx.random());
+            disc1(ctx.origin().above(x+1).relative(dir,2), leaves);
         }
         if (!bald) {
-            disc1(context.origin().above(height - 1), leaves);
-            disc3H(context.origin().above(height), leaves, context.random());
-            disc2(context.origin().above(height + 1), leaves);
+            disc1(ctx.origin().above(height - 1), leaves);
+            disc3H(ctx.origin().above(height), leaves, ctx.random());
+            disc2(ctx.origin().above(height + 1), leaves);
         }
 
         List<BlockPos> leavesClean = cleanLeavesArray(leaves, logs);
 
         boolean flag = true;
         for (DirectionalBlockPos log : logs) {
-            if (!TreeUtil.isAirOrLeaves(context.level(), log.pos)) {
+            if (!TreeUtil.isAirOrLeaves(ctx.level(), log.pos)) {
                 flag = false;
             }
         }
         if (!flag) return false;
 
-        TreeUtil.setDirtAt(context.level(), context.origin().below());
+        TreeUtil.setDirtAt(ctx.level(), ctx.origin().below());
 
         for (DirectionalBlockPos log : logs) {
-            TreeUtil.placeDirectionalLogAt(context.level(), log.pos, log.direction, context.random(), context.config());
+            TreeUtil.placeDirectionalLogAt(ctx.level(), log.pos, log.direction, ctx.random(), ctx.config());
         }
         for (BlockPos leaf : leavesClean) {
-            TreeUtil.placeLeafAt(context.level(), leaf, context.random(), context.config());
+            TreeUtil.placeLeafAt(ctx.level(), leaf, ctx.random(), ctx.config());
         }
 
         Set<BlockPos> set = Sets.newHashSet();
         BiConsumer<BlockPos, BlockState> decSet = (blockPos, blockState) -> {
             set.add(blockPos.immutable());
-            context.level().setBlock(blockPos, blockState, 19);
+            ctx.level().setBlock(blockPos, blockState, 19);
         };
         BoundingBox mutableBoundingBox = BoundingBox.infinite();
 
@@ -96,10 +89,10 @@ public class CypressFeature extends Feature<TreeConfiguration> {
             logsPos.add(log.pos);
         }
 
-        if (!context.config().decorators.isEmpty()) {
+        if (!ctx.config().decorators.isEmpty()) {
             logsPos.sort(Comparator.comparingInt(Vec3i::getY));
             leavesClean.sort(Comparator.comparingInt(Vec3i::getY));
-            context.config().decorators.forEach((decorator) -> decorator.place(context.level(), decSet, context.random(), logsPos, leavesClean));
+            ctx.config().decorators.forEach((decorator) -> decorator.place(ctx.level(), decSet, ctx.random(), logsPos, leavesClean));
         }
 
         return true;
