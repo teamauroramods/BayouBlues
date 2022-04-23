@@ -1,7 +1,5 @@
 <p align="center"><img src="https://raw.githubusercontent.com/teamauroramods/BayouBlues/1.18.x/forge/src/main/resources/logo.png" width=60%></p>
 <h3 align="center">Bayou Blues</h3>
-
-<p align="center">Bayou Blues adds the Bayou, a new biome inspired by the swamps of Florida! It's full of foliage such as cypress trees, beard moss, algae, and gooseberries. It also adds Lily Flowers that can grow on Lily Pads.</p>
 <p align="center">
   1.18 and above requires Pollen
 </p>
