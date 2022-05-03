@@ -3,6 +3,7 @@ package com.teamaurora.bayou_blues.core.registry;
 import com.teamaurora.bayou_blues.common.item.DrinkItem;
 import com.teamaurora.bayou_blues.common.item.JamItem;
 import com.teamaurora.bayou_blues.core.BayouBlues;
+import gg.moonflower.pollen.api.item.PollinatedBoatItem;
 import gg.moonflower.pollen.api.platform.Platform;
 import gg.moonflower.pollen.api.registry.PollinatedRegistry;
 import net.minecraft.core.Registry;
@@ -18,6 +19,9 @@ import java.util.function.Supplier;
 public class BayouBluesItems {
     public static final PollinatedRegistry<Item> ITEMS = PollinatedRegistry.create(Registry.ITEM, BayouBlues.MOD_ID);
 
+    /* Boats */
+
+    public static final Supplier<Item> CYPRESS_BOAT_ITEM = ITEMS.register("cypress_boat", () -> new PollinatedBoatItem(BayouBluesEntities.CYPRESS_BOAT, new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_TRANSPORTATION)));
 
     /* Gooseberry Stuff */
 

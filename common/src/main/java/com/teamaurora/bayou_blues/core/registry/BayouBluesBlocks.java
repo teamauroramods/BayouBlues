@@ -1,6 +1,7 @@
 package com.teamaurora.bayou_blues.core.registry;
 
 import com.teamaurora.bayou_blues.common.block.*;
+import com.mojang.datafixers.util.Pair;
 import com.teamaurora.bayou_blues.common.block.thatch.ThatchBlock;
 import com.teamaurora.bayou_blues.common.block.thatch.ThatchSlabBlock;
 import com.teamaurora.bayou_blues.common.block.thatch.ThatchStairBlock;
@@ -11,6 +12,9 @@ import com.teamaurora.bayou_blues.common.item.FuelBlockItem;
 import com.teamaurora.bayou_blues.common.item.LilyItem;
 import com.teamaurora.bayou_blues.core.BayouBlues;
 import com.teamaurora.bayou_blues.core.registry.util.Woodset;
+import gg.moonflower.pollen.api.block.PollinatedStandingSignBlock;
+import gg.moonflower.pollen.api.block.PollinatedWallSignBlock;
+import gg.moonflower.pollen.api.registry.PollinatedBlockRegistry;
 import gg.moonflower.pollen.api.registry.PollinatedRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.world.item.BlockItem;
@@ -28,7 +32,7 @@ import java.util.function.Supplier;
  */
 public class BayouBluesBlocks {
 
-    public static final PollinatedRegistry<Block> BLOCKS = PollinatedRegistry.create(Registry.BLOCK, BayouBlues.MOD_ID);
+    public static final PollinatedBlockRegistry BLOCKS = PollinatedRegistry.createBlock(BayouBluesItems.ITEMS);
 
     /* Cypress Woodset */
 
@@ -50,6 +54,8 @@ public class BayouBluesBlocks {
     public static final Supplier<Block> CYPRESS_FENCE_GATE = registerWoodsetBlock("cypress_fence_gate", CYPRESS::fenceGate, CreativeModeTab.TAB_REDSTONE, Blocks.OAK_FENCE_GATE);
     public static final Supplier<Block> CYPRESS_DOOR = registerWoodsetBlock("cypress_door", CYPRESS::door, CreativeModeTab.TAB_REDSTONE, Blocks.OAK_DOOR);
     public static final Supplier<Block> CYPRESS_TRAPDOOR = registerWoodsetBlock("cypress_trapdoor", CYPRESS::trapdoor, CreativeModeTab.TAB_REDSTONE, Blocks.OAK_TRAPDOOR);
+
+    public static final Pair<Supplier<PollinatedStandingSignBlock>, Supplier<PollinatedWallSignBlock>> CYPRESS_SIGN = BLOCKS.registerSign("cypress", Material.WOOD, MaterialColor.COLOR_GREEN);
 
 
     /* Other Cypress Blocks */

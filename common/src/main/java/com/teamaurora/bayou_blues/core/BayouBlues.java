@@ -1,6 +1,7 @@
 package com.teamaurora.bayou_blues.core;
 
 import com.teamaurora.bayou_blues.core.registry.BayouBluesBlocks;
+import com.teamaurora.bayou_blues.core.registry.BayouBluesEntities;
 import com.teamaurora.bayou_blues.core.registry.BayouBluesFeatures;
 import com.teamaurora.bayou_blues.core.registry.BayouBluesItems;
 import gg.moonflower.pollen.api.platform.Platform;
@@ -70,6 +71,7 @@ public class BayouBlues {
     public static void onCommonInit() {
         BayouBluesItems.ITEMS.register(BayouBlues.PLATFORM);
         BayouBluesBlocks.BLOCKS.register(BayouBlues.PLATFORM);
+        BayouBluesEntities.BOATS.register(PLATFORM);
         BayouBluesFeatures.FEATURES.register(BayouBlues.PLATFORM);
         BayouBluesFeatures.CONFIGURED_FEATURES.register(BayouBlues.PLATFORM);
         BayouBluesFeatures.TREE_DECORATOR_TYPES.register(BayouBlues.PLATFORM);
