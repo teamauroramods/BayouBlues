@@ -14,6 +14,7 @@ import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
@@ -136,5 +137,9 @@ public class BayouBlues {
     }
 
     public static void onDataInit(Platform.DataSetupContext ctx) {
+    }
+
+    public static ResourceLocation generateResourceLocation(String path) {
+        return new ResourceLocation(MOD_ID, path);
     }
 }
