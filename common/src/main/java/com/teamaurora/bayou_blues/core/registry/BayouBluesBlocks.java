@@ -36,25 +36,25 @@ public class BayouBluesBlocks {
 
     private static final Woodset CYPRESS = new Woodset(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_GREEN);
 
-    public static final Supplier<Block> STRIPPED_CYPRESS_LOG = BLOCKS.registerWithItem("stripped_cypress_log", CYPRESS::stripped_log, block -> new TabInsertBlockItem(Blocks.STRIPPED_WARPED_STEM.asItem(), block, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
-    public static final Supplier<Block> STRIPPED_CYPRESS_WOOD = BLOCKS.registerWithItem("stripped_cypress_wood", CYPRESS::stripped_wood, block -> new TabInsertBlockItem(Blocks.STRIPPED_WARPED_HYPHAE.asItem(), block, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
-    public static final Supplier<Block> CYPRESS_LOG = BLOCKS.registerWithItem("cypress_log", CYPRESS::log, block -> new TabInsertBlockItem(Blocks.WARPED_STEM.asItem(), block, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
-    public static final Supplier<Block> CYPRESS_WOOD = BLOCKS.registerWithItem("cypress_wood", CYPRESS::wood, block -> new TabInsertBlockItem(Blocks.WARPED_HYPHAE.asItem(), block, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
+    public static final Supplier<Block> STRIPPED_CYPRESS_LOG = BLOCKS.registerWithItem("stripped_cypress_log", CYPRESS::stripped_log, followItem(Blocks.STRIPPED_WARPED_STEM.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
+    public static final Supplier<Block> STRIPPED_CYPRESS_WOOD = BLOCKS.registerWithItem("stripped_cypress_wood", CYPRESS::stripped_wood, followItem(Blocks.STRIPPED_WARPED_HYPHAE.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
+    public static final Supplier<Block> CYPRESS_LOG = BLOCKS.registerWithItem("cypress_log", CYPRESS::log, followItem(Blocks.WARPED_STEM.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
+    public static final Supplier<Block> CYPRESS_WOOD = BLOCKS.registerWithItem("cypress_wood", CYPRESS::wood, followItem(Blocks.WARPED_HYPHAE.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
 
-    public static final Supplier<Block> CYPRESS_PLANKS = BLOCKS.registerWithItem("cypress_planks", CYPRESS::planks, block -> new TabInsertBlockItem(Blocks.WARPED_PLANKS.asItem(), block, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
-    public static final Supplier<Block> CYPRESS_SLAB = BLOCKS.registerWithItem("cypress_slab", CYPRESS::slab, block -> new TabInsertBlockItem(Blocks.WARPED_SLAB.asItem(), block, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
-    public static final Supplier<Block> CYPRESS_STAIRS = BLOCKS.registerWithItem("cypress_stairs", () -> CYPRESS.stairs(CYPRESS_PLANKS), block -> new TabInsertBlockItem(Blocks.WARPED_STAIRS.asItem(), block, new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
-    public static final Supplier<Block> CYPRESS_PRESSURE_PLATE = BLOCKS.registerWithItem("cypress_pressure_plate", CYPRESS::pressurePlate, block -> new TabInsertBlockItem(Blocks.WARPED_PRESSURE_PLATE.asItem(), block, new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE)));
-    public static final Supplier<Block> CYPRESS_BUTTON = BLOCKS.registerWithItem("cypress_button", CYPRESS::button, block -> new TabInsertBlockItem(Blocks.WARPED_BUTTON.asItem(), block, new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE)));
-    public static final Supplier<Block> CYPRESS_FENCE = BLOCKS.registerWithItem("cypress_fence", CYPRESS::fence, block -> new TabInsertBlockItem(Blocks.WARPED_FENCE.asItem(), block, new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
-    public static final Supplier<Block> CYPRESS_FENCE_GATE = BLOCKS.registerWithItem("cypress_fence_gate", CYPRESS::fenceGate, block -> new TabInsertBlockItem(Blocks.WARPED_FENCE_GATE.asItem(), block, new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE)));
-    public static final Supplier<Block> CYPRESS_DOOR = BLOCKS.registerWithItem("cypress_door", CYPRESS::door, block -> new TabInsertBlockItem(Blocks.WARPED_DOOR.asItem(), block, new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE)));
-    public static final Supplier<Block> CYPRESS_TRAPDOOR = BLOCKS.registerWithItem("cypress_trapdoor", CYPRESS::trapdoor, block -> new TabInsertBlockItem(Blocks.WARPED_TRAPDOOR.asItem(), block, new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE)));
+    public static final Supplier<Block> CYPRESS_PLANKS = BLOCKS.registerWithItem("cypress_planks", CYPRESS::planks, followItem(Blocks.WARPED_PLANKS.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
+    public static final Supplier<Block> CYPRESS_SLAB = BLOCKS.registerWithItem("cypress_slab", CYPRESS::slab, followItem(Blocks.WARPED_SLAB.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
+    public static final Supplier<Block> CYPRESS_STAIRS = BLOCKS.registerWithItem("cypress_stairs", () -> CYPRESS.stairs(CYPRESS_PLANKS), followItem(Blocks.WARPED_STAIRS.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
+    public static final Supplier<Block> CYPRESS_PRESSURE_PLATE = BLOCKS.registerWithItem("cypress_pressure_plate", CYPRESS::pressurePlate, followItem(Blocks.WARPED_PRESSURE_PLATE.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE)));
+    public static final Supplier<Block> CYPRESS_BUTTON = BLOCKS.registerWithItem("cypress_button", CYPRESS::button, followItem(Blocks.WARPED_BUTTON.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE)));
+    public static final Supplier<Block> CYPRESS_FENCE = BLOCKS.registerWithItem("cypress_fence", CYPRESS::fence, followItem(Blocks.WARPED_FENCE.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
+    public static final Supplier<Block> CYPRESS_FENCE_GATE = BLOCKS.registerWithItem("cypress_fence_gate", CYPRESS::fenceGate, followItem(Blocks.WARPED_FENCE_GATE.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE)));
+    public static final Supplier<Block> CYPRESS_DOOR = BLOCKS.registerWithItem("cypress_door", CYPRESS::door, followItem(Blocks.WARPED_DOOR.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE)));
+    public static final Supplier<Block> CYPRESS_TRAPDOOR = BLOCKS.registerWithItem("cypress_trapdoor", CYPRESS::trapdoor, followItem(Blocks.WARPED_TRAPDOOR.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE)));
 
     public static final Pair<Supplier<PollinatedStandingSignBlock>, Supplier<PollinatedWallSignBlock>> CYPRESS_SIGN = BLOCKS.registerSign("cypress", Material.WOOD, MaterialColor.COLOR_GREEN);
 
-    public static final Supplier<Block> CYPRESS_LEAVES = BLOCKS.registerWithItem("cypress_leaves", () -> new LeavesBlock(Properties.CYPRESS_LEAVES), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-    public static final Supplier<Block> CYPRESS_SAPLING = BLOCKS.registerWithItem("cypress_sapling", () -> new SaplingBlock(new OakTreeGrower(), Properties.CYPRESS_SAPLING), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> CYPRESS_LEAVES = BLOCKS.registerWithItem("cypress_leaves", () -> new LeavesBlock(Properties.CYPRESS_LEAVES), followItem(Blocks.FLOWERING_AZALEA_LEAVES.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
+    public static final Supplier<Block> CYPRESS_SAPLING = BLOCKS.registerWithItem("cypress_sapling", () -> new SaplingBlock(new OakTreeGrower(), Properties.CYPRESS_SAPLING), followItem(Blocks.DARK_OAK_SAPLING.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
     public static final Supplier<Block> POTTED_CYPRESS_SAPLING = BLOCKS.register("potted_cypress_sapling", createFlowerPot(CYPRESS_SAPLING));
 
     /* Other Cypress Blocks */
@@ -97,12 +97,16 @@ public class BayouBluesBlocks {
 
     /* Other */
 
-    public static final Supplier<Block> BEARD_MOSS_BLOCK = BLOCKS.registerWithItem("beard_moss_block", () -> new BeardMossBlockBlock(Properties.BEARD_MOSS_BLOCK), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-    public static final Supplier<Block> BEARD_MOSS = BLOCKS.registerWithItem("beard_moss", () -> new BeardMossBlock(Properties.BEARD_MOSS), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-    public static final Supplier<Block> GIANT_FERN = BLOCKS.registerWithItem("giant_fern", () -> new DoublePlantBlock(Properties.GIANT_FERN), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
+    public static final Supplier<Block> BEARD_MOSS = BLOCKS.registerWithItem("beard_moss", () -> new BeardMossBlock(Properties.BEARD_MOSS), followItem(Blocks.MOSS_BLOCK.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
+    public static final Supplier<Block> BEARD_MOSS_BLOCK = BLOCKS.registerWithItem("beard_moss_block", () -> new BeardMossBlockBlock(Properties.BEARD_MOSS_BLOCK), followItem(Blocks.MOSS_BLOCK.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
+    public static final Supplier<Block> GIANT_FERN = BLOCKS.registerWithItem("giant_fern", () -> new DoublePlantBlock(Properties.GIANT_FERN), followItem(Blocks.LARGE_FERN.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
 
     private static Supplier<Block> createFlowerPot(Supplier<Block> block) {
         return () -> new FlowerPotBlock(block.get(), Properties.POTTED_PLANT);
+    }
+
+    private static Function<Block, Item> followItem(Item insertAfter, Item.Properties properties) {
+        return object -> new TabInsertBlockItem(insertAfter, object, properties);
     }
 
     public static final class Properties {

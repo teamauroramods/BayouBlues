@@ -12,6 +12,7 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.BlockHitResult;
 
 import java.util.function.Supplier;
@@ -21,8 +22,8 @@ import java.util.function.Supplier;
  * @author Steven
  * @author ebo2022
  */
-public class AlgaeItem extends BlockItem {
-    public AlgaeItem(Block blockIn, Item.Properties properties) { super(blockIn, properties); }
+public class AlgaeItem extends TabInsertBlockItem {
+    public AlgaeItem(Block blockIn, Item.Properties properties) { super(Blocks.GLOW_LICHEN.asItem(), blockIn, properties); }
 
     @Override
     public InteractionResult useOn(UseOnContext context) {

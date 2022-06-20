@@ -21,9 +21,9 @@ import net.minecraft.world.level.block.state.BlockState;
  * @author Steven
  * @author ebo2022
  */
-public class LilyItem extends BlockItem {
+public class LilyItem extends TabInsertBlockItem {
     public LilyItem(Block flower, Item.Properties properties) {
-        super(flower, properties);
+        super(Items.WITHER_ROSE, flower, properties);
     }
 
     @Override
