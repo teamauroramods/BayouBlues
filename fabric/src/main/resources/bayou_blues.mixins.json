@@ -6,7 +6,8 @@
   "client": [
   ],
   "mixins": [
-    "BoneMealItemMixin"
+    "BoneMealItemMixin",
+    "fabric.BoneMealItemMixin"
   ],
   "injectors": {
     "defaultRequire": 1
