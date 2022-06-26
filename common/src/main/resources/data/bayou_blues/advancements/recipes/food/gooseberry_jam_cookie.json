@@ -1,0 +1,32 @@
+{
+  "parent": "bayou_blues:recipes/root",
+  "rewards": {
+    "recipes": [
+      "bayou_blues:crafting/gooseberry_jam_cookie"
+    ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "bayou_blues:crafting/gooseberry_jam_cookie"
+      }
+    },
+    "has_items": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [ "bayou_blues:gooseberry_jam" ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_items"
+    ]
+  ]
+}
