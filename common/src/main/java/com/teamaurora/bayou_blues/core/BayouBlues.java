@@ -24,7 +24,6 @@ public class BayouBlues {
             .clientPostInit(() -> BayouBlues::onClientPostInit)
             .commonInit(BayouBlues::onCommonInit)
             .commonPostInit(BayouBlues::onCommonPostInit)
-            .dataInit(BayouBlues::onDataInit)
             .build();
 
     public static void onClientInit() {
@@ -71,10 +70,7 @@ public class BayouBlues {
       ctx.enqueueWork(BayouBluesData::init);
     }
 
-    public static void onDataInit(Platform.DataSetupContext ctx) {
-    }
-
-    public static ResourceLocation createLocation(String path) {
+    public static ResourceLocation location(String path) {
         return new ResourceLocation(MOD_ID, path);
     }
 }

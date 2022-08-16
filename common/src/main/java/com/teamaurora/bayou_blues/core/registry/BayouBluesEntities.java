@@ -12,5 +12,5 @@ public class BayouBluesEntities {
     public static final PollinatedRegistry<PollinatedBoatType> BOATS = PollinatedRegistry.create(PollenRegistries.BOAT_TYPE_REGISTRY, BayouBlues.MOD_ID);
 
     /* Boats */
-    public static final Supplier<PollinatedBoatType> CYPRESS_BOAT = BOATS.register("cypress_boat", () -> new PollinatedBoatType(new ResourceLocation(BayouBlues.MOD_ID, "textures/entity/boat/cypress_boat.png")));
+    public static final Supplier<PollinatedBoatType> CYPRESS_BOAT = BOATS.register("cypress_boat", () -> new PollinatedBoatType(BayouBlues.location("textures/entity/boat/cypress_boat.png")));
 }
