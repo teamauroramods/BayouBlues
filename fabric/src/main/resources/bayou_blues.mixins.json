@@ -1,13 +1,12 @@
 {
   "required": true,
-  "package": "com.teamaurora.bayou_blues.core.mixin",
+  "package": "com.teamaurora.bayou_blues.core.mixin.fabric",
   "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
   "client": [
   ],
   "mixins": [
-    "BoneMealItemMixin",
-    "fabric.BoneMealItemMixin"
+    "BoneMealItemMixin"
   ],
   "injectors": {
     "defaultRequire": 1
