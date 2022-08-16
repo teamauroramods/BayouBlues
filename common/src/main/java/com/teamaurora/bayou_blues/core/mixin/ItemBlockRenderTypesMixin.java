@@ -12,16 +12,17 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(ItemBlockRenderTypes.class)
 public class ItemBlockRenderTypesMixin {
+
     @Shadow
     private static boolean renderCutout;
 
-    @Inject(method = "getChunkRenderType", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "getChunkRenderType", at = @At("TAIL"), cancellable = true)
     private static void getChunkRenderType(BlockState blockState, CallbackInfoReturnable<RenderType> cir) {
         if (blockState.getBlock() instanceof BeardMossBlockBlock)
             cir.setReturnValue(renderCutout ? RenderType.cutoutMipped() : RenderType.solid());
     }
 
-    @Inject(method = "getMovingBlockRenderType", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "getMovingBlockRenderType", at = @At("TAIL"), cancellable = true)
     private static void getMovingBlockRenderType(BlockState blockState, CallbackInfoReturnable<RenderType> cir) {
         if (blockState.getBlock() instanceof BeardMossBlockBlock)
             cir.setReturnValue(renderCutout ? RenderType.cutoutMipped() : RenderType.solid());
