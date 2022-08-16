@@ -3,6 +3,7 @@ package com.teamaurora.bayou_blues.core;
 import com.teamaurora.bayou_blues.core.other.BayouBluesData;
 import com.teamaurora.bayou_blues.core.registry.BayouBluesBlocks;
 import com.teamaurora.bayou_blues.core.registry.BayouBluesEntities;
+import com.teamaurora.bayou_blues.core.registry.BayouBluesFeatures;
 import com.teamaurora.bayou_blues.core.registry.BayouBluesItems;
 import gg.moonflower.pollen.api.platform.Platform;
 import gg.moonflower.pollen.api.registry.client.ColorRegistry;
@@ -63,6 +64,8 @@ public class BayouBlues {
     public static void onCommonInit() {
         BayouBluesBlocks.BLOCKS.register(PLATFORM);
         BayouBluesItems.ITEMS.register(PLATFORM);
+        BayouBluesFeatures.FEATURES.register(PLATFORM);
+        BayouBluesFeatures.TREE_DECORATOR_TYPES.register(PLATFORM);
         BayouBluesEntities.BOATS.register(PLATFORM);
     }
 
