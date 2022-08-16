@@ -42,35 +42,14 @@ public class BayouBluesFeatures {
     public static final Supplier<TreeDecoratorType<?>> CYPRESS_BRANCH = TREE_DECORATOR_TYPES.register("cypress_branch", () -> new TreeDecoratorType<>(CypressBranchTreeDecorator.CODEC));
 
     public static final class BlockStates {
-        public static final BlockState CYPRESS_LOG = BayouBluesBlocks.CYPRESS_LOG.get().defaultBlockState();
         public static final BlockState CYPRESS_LEAVES = BayouBluesBlocks.CYPRESS_LEAVES.get().defaultBlockState();
-        public static final BlockState HANGING_CYPRESS_LEAVES = BayouBluesBlocks.HANGING_CYPRESS_LEAVES.get().defaultBlockState();
-
-        public static final BlockState ALGAE = BayouBluesBlocks.ALGAE.get().defaultBlockState();
-        public static final BlockState CYPRESS_LEAF_CARPET = BayouBluesBlocks.CYPRESS_LEAF_CARPET.get().defaultBlockState();
-
-        public static final BlockState BLUE_LILY = BayouBluesBlocks.BLUE_LILY.get().defaultBlockState();
-        public static final BlockState CYAN_LILY = BayouBluesBlocks.CYAN_LILY.get().defaultBlockState();
-        public static final BlockState LIGHT_BLUE_LILY = BayouBluesBlocks.LIGHT_BLUE_LILY.get().defaultBlockState();
-        public static final BlockState LIGHT_GRAY_LILY = BayouBluesBlocks.LIGHT_GRAY_LILY.get().defaultBlockState();
-        public static final BlockState WHITE_LILY = BayouBluesBlocks.WHITE_LILY.get().defaultBlockState();
-        public static final BlockState PINK_LILY = BayouBluesBlocks.PINK_LILY.get().defaultBlockState();
-        public static final BlockState MAGENTA_LILY = BayouBluesBlocks.MAGENTA_LILY.get().defaultBlockState();
-        public static final BlockState PURPLE_LILY = BayouBluesBlocks.PURPLE_LILY.get().defaultBlockState();
-        public static final BlockState LILY_PAD = Blocks.LILY_PAD.defaultBlockState();
-
-        public static final BlockState GRASS = Blocks.GRASS.defaultBlockState();
-        public static final BlockState TALL_GRASS = Blocks.TALL_GRASS.defaultBlockState();
-        public static final BlockState FERN = Blocks.FERN.defaultBlockState();
-        public static final BlockState LARGE_FERN = Blocks.LARGE_FERN.defaultBlockState();
-        public static final BlockState GIANT_FERN = BayouBluesBlocks.GIANT_FERN.get().defaultBlockState();
     }
 
     public static final class Configs {
         public static final TreeConfiguration CYPRESS_TREE_CONFIG_GROWN = (new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(BayouBluesBlocks.CYPRESS_LOG.get()),
                 new StraightTrunkPlacer(0, 0, 0),
-                new SimpleStateProvider(BayouBluesFeatures.BlockStates.CYPRESS_LEAVES),
+                BlockStateProvider.simple(BlockStates.CYPRESS_LEAVES),
                 new BlobFoliagePlacer(UniformInt.of(0, 0), UniformInt.of(0, 0), 0),
                 new TwoLayersFeatureSize(0, 0, 0)
         )).ignoreVines().decorators(ImmutableList.of(HangingCypressLeavesTreeDecorator.DECORATOR, CypressBranchTreeDecorator.DECORATOR)).build();
