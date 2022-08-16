@@ -1,5 +1,5 @@
 modLoader = "javafml"
-loaderVersion = "[39,)"
+loaderVersion = "[40,)"
 issueTrackerURL = "https://github.com/teamauroramods/BayouBlues/issues"
 license = "GPLv3"
 
@@ -16,7 +16,7 @@ logoFile = "logo.png"
 [[dependencies.${id}]]
 modId = "forge"
 mandatory = true
-versionRange = "[39,)"
+versionRange = "[40,)"
 ordering = "NONE"
 side = "BOTH"
 
@@ -30,6 +30,6 @@ side = "BOTH"
 [[dependencies.${id}]]
 modId = "pollen"
 mandatory = true
-versionRange = "[1.4.4,)"
+versionRange = "[1.4.9,)"
 ordering = "BEFORE"
 side = "BOTH"
