@@ -112,7 +112,6 @@ public class MegaCypressFeature extends Feature<TreeConfiguration> {
             set.add(blockPos.immutable());
             ctx.level().setBlock(blockPos, blockState, 19);
         };
-        BoundingBox mutableBoundingBox = BoundingBox.infinite();
 
         List<BlockPos> logsPos = new ArrayList<>();
         for (DirectionalBlockPos log : logs) {

@@ -8,6 +8,7 @@ import com.teamaurora.bayou_blues.common.block.thatch.ThatchStairBlock;
 import com.teamaurora.bayou_blues.common.item.AlgaeItem;
 import com.teamaurora.bayou_blues.common.item.LilyItem;
 import com.teamaurora.bayou_blues.common.item.TabInsertBlockItem;
+import com.teamaurora.bayou_blues.common.treegrowers.CypressTreeGrower;
 import com.teamaurora.bayou_blues.core.registry.util.Woodset;
 import gg.moonflower.pollen.api.block.PollinatedStandingSignBlock;
 import gg.moonflower.pollen.api.block.PollinatedWallSignBlock;
@@ -54,7 +55,7 @@ public class BayouBluesBlocks {
     public static final Pair<Supplier<PollinatedStandingSignBlock>, Supplier<PollinatedWallSignBlock>> CYPRESS_SIGN = BLOCKS.registerSign("cypress", Material.WOOD, MaterialColor.COLOR_GREEN);
 
     public static final Supplier<Block> CYPRESS_LEAVES = BLOCKS.registerWithItem("cypress_leaves", () -> new LeavesBlock(Properties.CYPRESS_LEAVES), followItem(Blocks.FLOWERING_AZALEA_LEAVES.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
-    public static final Supplier<Block> CYPRESS_SAPLING = BLOCKS.registerWithItem("cypress_sapling", () -> new SaplingBlock(new OakTreeGrower(), Properties.CYPRESS_SAPLING), followItem(Blocks.DARK_OAK_SAPLING.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
+    public static final Supplier<Block> CYPRESS_SAPLING = BLOCKS.registerWithItem("cypress_sapling", () -> new SaplingBlock(new CypressTreeGrower(), Properties.CYPRESS_SAPLING), followItem(Blocks.DARK_OAK_SAPLING.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
     public static final Supplier<Block> POTTED_CYPRESS_SAPLING = BLOCKS.register("potted_cypress_sapling", createFlowerPot(CYPRESS_SAPLING));
 
     /* Other Cypress Blocks */
