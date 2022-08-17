@@ -13,12 +13,12 @@ public class CypressTreeGrower extends AbstractMegaTreeGrower {
     @Nullable
     @Override
     protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredMegaFeature(Random random) {
-        return BayouBluesFeatures.Configured.MEGA_CYPRESS_GROWN;
+        return Holder.direct(BayouBluesFeatures.Configured.GROWN_MEGA_CYPRESS_TREE.get());
     }
 
     @Nullable
     @Override
     protected Holder<? extends ConfiguredFeature<?, ?>> getConfiguredFeature(Random random, boolean bl) {
-        return BayouBluesFeatures.Configured.CYPRESS_GROWN;
+        return Holder.direct(BayouBluesFeatures.Configured.GROWN_CYPRESS_TREE.get());
     }
 }

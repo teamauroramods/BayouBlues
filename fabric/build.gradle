@@ -53,9 +53,10 @@ repositories {
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
     modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
-    modApi("gg.moonflower:pollen-fabric:${rootProject.pollen_version}") { transitive = false }
-
+    modApi"gg.moonflower:pollen-fabric:${rootProject.pollen_version}+${rootProject.minecraft_version}"
     modApi "com.terraformersmc:modmenu:${rootProject.mod_menu_version}"
+    modCompileOnlyApi "mezz.jei:jei-${rootProject.minecraft_version}-fabric-api:${rootProject.jeiVersion}"
+    modRuntimeOnly "mezz.jei:jei-${rootProject.minecraft_version}-fabric:${rootProject.jeiVersion}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }

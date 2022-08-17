@@ -52,10 +52,13 @@ configurations {
 dependencies {
     forge "net.minecraftforge:forge:${rootProject.minecraft_version}-${rootProject.forge_version}"
 
-    modApi("gg.moonflower:pollen-forge:${rootProject.pollen_version}") { transitive = false }
+    modApi "gg.moonflower:pollen-forge:${rootProject.pollen_version}+${rootProject.minecraft_version}"
 
-    modRuntimeOnly "curse.maven:configured-457570:3559398"
-    modRuntimeOnly "curse.maven:catalogue-459701:3559402"
+    modRuntimeOnly "curse.maven:configured-457570:${rootProject.configuredVersion}"
+    modRuntimeOnly "curse.maven:catalogue-459701:${rootProject.catalogueVersion}"
+    modRuntimeOnly "curse.maven:shutupexperimentalsettings-407174:${rootProject.shutupVersion}"
+    modCompileOnlyApi "mezz.jei:jei-${rootProject.minecraft_version}-forge-api:${rootProject.jeiVersion}"
+    modRuntimeOnly "mezz.jei:jei-${rootProject.minecraft_version}-forge:${rootProject.jeiVersion}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
