@@ -1,9 +1,12 @@
 dependencies {
     // We depend on fabric loader here to use the fabric @Environment annotations and get the mixin dependencies
     // Do NOT use other classes from fabric loader
-    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
-    modCompileOnlyApi "mezz.jei:jei-${rootProject.minecraft_version}-common-api:${rootProject.jeiVersion}"
-    modApi "gg.moonflower:pollen:${rootProject.pollen_version}+${rootProject.minecraft_version}"
+    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabricLoaderVersion}"
+
+    modApi "gg.moonflower:pollen:${rootProject.pollenVersion}+${rootProject.minecraftVersion}"
+
+    modCompileOnlyApi "mezz.jei:jei-${rootProject.minecraftVersion}-common-api:${rootProject.jeiVersion}"
+    modCompileOnly "mcp.mobius.waila:wthit-api:fabric-${rootProject.wthitVersion}"
 }
 
 architectury {
@@ -11,7 +14,7 @@ architectury {
 }
 
 loom {
-    accessWidenerPath.set(file("src/main/resources/${project.mod_id}.accesswidener"))
+    accessWidenerPath = file("src/main/resources/${project.modId}.accesswidener")
 }
 
 publishing {

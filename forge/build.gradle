@@ -8,32 +8,30 @@ plugins {
 archivesBaseName = "${rootProject.archivesBaseName}-${project.name}"
 
 loom {
-    accessWidenerPath.set(project(":common").file("src/main/resources/${project.mod_id}.accesswidener"))
+    accessWidenerPath.set(project(":common").file("src/main/resources/${project.modId}.accesswidener"))
+
+    runConfigs.configureEach {
+        if (name == "client" || name == "data")
+            runDir = "../run"
+        else if (name == "server")
+            runDir = "../run/server-forge"
+    }
 
     forge {
-        // For some reason gradle doesn't like using rootProject here?
-        mixinConfig "${project.mod_id}-common.mixins.json"
-        mixinConfig "${project.mod_id}.mixins.json"
+        mixinConfig "${project.modId}-common.mixins.json"
+        mixinConfig "${project.modId}.mixins.json"
 
         convertAccessWideners.set(true)
-        extraAccessWideners.add("${project.mod_id}.accesswidener")
+        extraAccessWideners.add("${project.modId}.accesswidener")
+    }
 
-        dataGen {
-            mod project.mod_id
-        }
-    }
     mixin {
-        defaultRefmapName = "${project.mod_id}-refmap.json"
-    }
-    launches {
-        data {
-            arg "--existing", file("src/main/resources").absolutePath
-        }
+        defaultRefmapName = "${project.modId}-refmap.json"
     }
 }
 
 sourceSets.main.resources {
-    srcDir file("src/generated/resources")
+    srcDir file("src/generated/resources/")
 }
 
 architectury {
@@ -49,31 +47,40 @@ configurations {
     developmentForge.extendsFrom common
 }
 
+repositories {
+}
+
 dependencies {
-    forge "net.minecraftforge:forge:${rootProject.minecraft_version}-${rootProject.forge_version}"
+    forge "net.minecraftforge:forge:${rootProject.minecraftVersion}-${rootProject.forgeVersion}"
 
-    modApi "gg.moonflower:pollen-forge:${rootProject.pollen_version}+${rootProject.minecraft_version}"
+    modApi "gg.moonflower:pollen-forge:${rootProject.pollenVersion}+${rootProject.minecraftVersion}"
 
-    modRuntimeOnly "curse.maven:configured-457570:${rootProject.configuredVersion}"
-    modRuntimeOnly "curse.maven:catalogue-459701:${rootProject.catalogueVersion}"
+    modCompileOnlyApi "mezz.jei:jei-${rootProject.minecraftVersion}-forge-api:${rootProject.jeiVersion}"
+    modRuntimeOnly "mezz.jei:jei-${rootProject.minecraftVersion}-forge:${rootProject.jeiVersion}"
+
+    modCompileOnly "mcp.mobius.waila:wthit-api:forge-${rootProject.wthitVersion}"
+    modRuntimeOnly "mcp.mobius.waila:wthit:forge-${rootProject.wthitVersion}"
+    modRuntimeOnly "lol.bai:badpackets:forge-${rootProject.badPacketsVersion}"
+
+    modImplementation "curse.maven:appleskin-248787:${rootProject.appleSkinForge}"
+
     modRuntimeOnly "curse.maven:shutupexperimentalsettings-407174:${rootProject.shutupVersion}"
-    modCompileOnlyApi "mezz.jei:jei-${rootProject.minecraft_version}-forge-api:${rootProject.jeiVersion}"
-    modRuntimeOnly "mezz.jei:jei-${rootProject.minecraft_version}-forge:${rootProject.jeiVersion}"
+    modRuntimeOnly "curse.maven:configured-457570:${rootProject.configuredVersion}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
 }
 
 processResources {
-    inputs.property "id", rootProject.mod_id
-    inputs.property "name", rootProject.mod_name
-    inputs.property "version", rootProject.mod_version
+    inputs.property "id", rootProject.modId
+    inputs.property "name", rootProject.modName
+    inputs.property "version", rootProject.modVersion
     inputs.property "repo", rootProject.name
 
     filesMatching(["META-INF/mods.toml", "pack.mcmeta"]) {
-        expand "id": rootProject.mod_id,
-                "name": rootProject.mod_name,
-                "version": rootProject.mod_version,
+        expand "id": rootProject.modId,
+                "name": rootProject.modName,
+                "version": rootProject.modVersion,
                 "repo": rootProject.name
     }
 
@@ -106,6 +113,7 @@ sourcesJar {
     def commonSources = project(":common").sourcesJar
     dependsOn commonSources
     from commonSources.archiveFile.map { zipTree(it) }
+    duplicatesStrategy(DuplicatesStrategy.INCLUDE)
 }
 
 components.java {

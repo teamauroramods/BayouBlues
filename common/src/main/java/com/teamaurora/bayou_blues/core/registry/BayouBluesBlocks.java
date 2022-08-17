@@ -12,6 +12,7 @@ import com.teamaurora.bayou_blues.common.treegrowers.CypressTreeGrower;
 import com.teamaurora.bayou_blues.core.registry.util.Woodset;
 import gg.moonflower.pollen.api.block.PollinatedStandingSignBlock;
 import gg.moonflower.pollen.api.block.PollinatedWallSignBlock;
+import gg.moonflower.pollen.api.platform.Platform;
 import gg.moonflower.pollen.api.registry.PollinatedBlockRegistry;
 import gg.moonflower.pollen.api.registry.PollinatedRegistry;
 import net.minecraft.world.item.BlockItem;
@@ -22,6 +23,8 @@ import net.minecraft.world.level.block.grower.OakTreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -31,9 +34,8 @@ import java.util.function.Supplier;
  */
 public class BayouBluesBlocks {
 
+    private static final Logger LOGGER = LogManager.getLogger();
     public static final PollinatedBlockRegistry BLOCKS = PollinatedRegistry.createBlock(BayouBluesItems.ITEMS);
-
-    /* Cypress Woodset */
 
     private static final Woodset CYPRESS = new Woodset(MaterialColor.COLOR_BROWN, MaterialColor.COLOR_GREEN);
 
@@ -51,23 +53,17 @@ public class BayouBluesBlocks {
     public static final Supplier<Block> CYPRESS_FENCE_GATE = BLOCKS.registerWithItem("cypress_fence_gate", CYPRESS::fenceGate, followItem(Blocks.WARPED_FENCE_GATE.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE)));
     public static final Supplier<Block> CYPRESS_DOOR = BLOCKS.registerWithItem("cypress_door", CYPRESS::door, followItem(Blocks.WARPED_DOOR.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE)));
     public static final Supplier<Block> CYPRESS_TRAPDOOR = BLOCKS.registerWithItem("cypress_trapdoor", CYPRESS::trapdoor, followItem(Blocks.WARPED_TRAPDOOR.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_REDSTONE)));
-
     public static final Pair<Supplier<PollinatedStandingSignBlock>, Supplier<PollinatedWallSignBlock>> CYPRESS_SIGN = BLOCKS.registerSign("cypress", Material.WOOD, MaterialColor.COLOR_GREEN);
 
     public static final Supplier<Block> CYPRESS_LEAVES = BLOCKS.registerWithItem("cypress_leaves", () -> new LeavesBlock(Properties.CYPRESS_LEAVES), followItem(Blocks.FLOWERING_AZALEA_LEAVES.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
     public static final Supplier<Block> CYPRESS_SAPLING = BLOCKS.registerWithItem("cypress_sapling", () -> new SaplingBlock(new CypressTreeGrower(), Properties.CYPRESS_SAPLING), followItem(Blocks.DARK_OAK_SAPLING.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
     public static final Supplier<Block> POTTED_CYPRESS_SAPLING = BLOCKS.register("potted_cypress_sapling", createFlowerPot(CYPRESS_SAPLING));
 
-    /* Other Cypress Blocks */
-
     public static final Supplier<Block> CYPRESS_LEAF_CARPET = BLOCKS.registerWithItem("cypress_leaf_carpet", () -> new LeafCarpetBlock(Properties.CYPRESS_LEAVES), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
     public static final Supplier<Block> HANGING_CYPRESS_LEAVES = BLOCKS.registerWithItem("hanging_cypress_leaves", () -> new HangingCypressLeavesBlock(Properties.CYPRESS_LEAVES), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-
     public static final Supplier<Block> CYPRESS_KNEE = BLOCKS.registerWithItem("cypress_knee", () -> new CypressKneeBlock(Properties.CYPRESS_KNEE), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
     public static final Supplier<Block> LARGE_CYPRESS_KNEE = BLOCKS.registerWithItem("large_cypress_knee", () -> new DoubleCypressKneeBlock(Properties.CYPRESS_KNEE), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
     public static final Supplier<Block> CYPRESS_BRANCH = BLOCKS.registerWithItem("cypress_branch", () -> new CypressBranchBlock(Properties.CYPRESS_BRANCH), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS));
-
-    /* Lilies */
 
     public static final Supplier<Block> BLUE_LILY = BLOCKS.registerWithItem("blue_lily", () -> new LilyFlowerBlock(Properties.LILY), object -> new LilyItem(object, new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
     public static final Supplier<Block> LIGHT_GRAY_LILY = BLOCKS.registerWithItem("light_gray_lily", () -> new LilyFlowerBlock(Properties.LILY), object -> new LilyItem(object, new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
@@ -87,16 +83,10 @@ public class BayouBluesBlocks {
     public static final Supplier<Block> POTTED_PURPLE_LILY = BLOCKS.register("potted_purple_lily", createFlowerPot(PURPLE_LILY));
     public static final Supplier<Block> POTTED_WHITE_LILY = BLOCKS.register("potted_white_lily", createFlowerPot(WHITE_LILY));
 
-
-    /* Algae */
-
     public static final Supplier<Block> ALGAE = BLOCKS.registerWithItem("algae", () -> new AlgaeBlock(Properties.ALGAE), object -> new AlgaeItem(object, new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
     public static final Supplier<Block> ALGAE_THATCH = BLOCKS.registerWithItem("algae_thatch", () -> new ThatchBlock(Properties.ALGAE_THATCH), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS));
     public static final Supplier<Block> ALGAE_THATCH_SLAB = BLOCKS.registerWithItem("algae_thatch_slab", () -> new ThatchSlabBlock(Properties.ALGAE_THATCH), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS));
     public static final Supplier<Block> ALGAE_THATCH_STAIRS = BLOCKS.registerWithItem("algae_thatch_stairs" ,() -> new ThatchStairBlock(BayouBluesBlocks.ALGAE_THATCH.get().defaultBlockState(), Properties.ALGAE_THATCH), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS));
-
-
-    /* Other */
 
     public static final Supplier<Block> BEARD_MOSS = BLOCKS.registerWithItem("beard_moss", () -> new BeardMossBlock(Properties.BEARD_MOSS), followItem(Blocks.MOSS_BLOCK.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
     public static final Supplier<Block> BEARD_MOSS_BLOCK = BLOCKS.registerWithItem("beard_moss_block", () -> new BeardMossBlockBlock(Properties.BEARD_MOSS_BLOCK), followItem(Blocks.MOSS_BLOCK.asItem(), new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS)));
@@ -108,6 +98,11 @@ public class BayouBluesBlocks {
 
     private static Function<Block, Item> followItem(Item insertAfter, Item.Properties properties) {
         return object -> new TabInsertBlockItem(insertAfter, object, properties);
+    }
+
+    public static void load(Platform platform) {
+        LOGGER.debug("Registered to platform");
+        BLOCKS.register(platform);
     }
 
     public static final class Properties {

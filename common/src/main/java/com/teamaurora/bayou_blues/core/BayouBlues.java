@@ -35,7 +35,6 @@ public class BayouBlues {
     }
 
     public static void onClientPostInit(Platform.ModSetupContext ctx) {
-        ctx.enqueueWork(() -> {
             RenderTypeRegistry.register(BayouBluesBlocks.HANGING_CYPRESS_LEAVES.get(), RenderType.cutoutMipped());
             RenderTypeRegistry.register(BayouBluesBlocks.CYPRESS_LEAF_CARPET.get(), RenderType.cutout());
             RenderTypeRegistry.register(BayouBluesBlocks.CYPRESS_SAPLING.get(), RenderType.cutout());
@@ -57,15 +56,14 @@ public class BayouBlues {
             RenderTypeRegistry.register(BayouBluesBlocks.WHITE_LILY.get(), RenderType.cutout());
             RenderTypeRegistry.register(BayouBluesBlocks.BEARD_MOSS.get(), RenderType.cutout());
             RenderTypeRegistry.register(BayouBluesBlocks.GIANT_FERN.get(), RenderType.cutout());
-        });
     }
 
     public static void onCommonInit() {
-        BayouBluesBlocks.BLOCKS.register(PLATFORM);
-        BayouBluesItems.ITEMS.register(PLATFORM);
-        BayouBluesFeatures.FEATURES.register(PLATFORM);
-        BayouBluesFeatures.TREE_DECORATOR_TYPES.register(PLATFORM);
-        BayouBluesBoatTypes.BOATS.register(PLATFORM);
+        BayouBluesBlocks.load(PLATFORM);
+        BayouBluesItems.load(PLATFORM);
+        BayouBluesBoatTypes.load(PLATFORM);
+        BayouBluesFeatures.load(PLATFORM);
+        BayouBluesFeatures.Configured.load(PLATFORM);
     }
 
     public static void onCommonPostInit(Platform.ModSetupContext ctx) {

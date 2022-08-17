@@ -12,26 +12,32 @@ architectury {
     fabric()
 }
 
-def generatedResources = file("src/generated/resources")
-def accessWidenerFile = project(":common").file("src/main/resources/${rootProject.mod_id}.accesswidener")
+def generatedResources = project(":fabric").file("src/generated/resources/")
+def accessWidenerFile  = project(":common").file("src/main/resources/${project.modId}.accesswidener")
 
 loom {
     mixin {
-        defaultRefmapName = "${project.mod_id}-refmap.json"
+        defaultRefmapName = "${project.modId}-refmap.json"
     }
-    accessWidenerPath.set(accessWidenerFile)
+
+    runConfigs.configureEach {
+        if (name == "client")
+            runDir = "../run"
+        else if (name == "server")
+            runDir = "../run/server-fabric"
+    }
 
     runs {
         datagen {
-            server()
+            client()
 
             name "Minecraft Data"
             vmArg "-Dfabric-api.datagen"
-            vmArg "-Dfabric-api.datagen.output-dir=${generatedResources}"
-
-            runDir "build/datagen"
+            vmArg "-Dfabric-api.datagen.output-dir=${generatedResources.absolutePath}"
+            vmArg "-Dfabric-api.datagen.modid=${project.modId}"
         }
     }
+    accessWidenerPath.set(accessWidenerFile)
 }
 
 sourceSets.main.resources {
@@ -46,17 +52,35 @@ configurations {
     developmentFabric.extendsFrom common
 }
 
+
 repositories {
-    maven { url "https://maven.terraformersmc.com/" }
+    maven { // ModMenu
+        name = "TerraformersMC"
+        url "https://maven.terraformersmc.com/"
+    }
+    maven { // AppleSkin
+        url "https://maven.ryanliptak.com/"
+    }
 }
 
 dependencies {
-    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
-    modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
-    modApi"gg.moonflower:pollen-fabric:${rootProject.pollen_version}+${rootProject.minecraft_version}"
-    modApi "com.terraformersmc:modmenu:${rootProject.mod_menu_version}"
-    modCompileOnlyApi "mezz.jei:jei-${rootProject.minecraft_version}-fabric-api:${rootProject.jeiVersion}"
-    modRuntimeOnly "mezz.jei:jei-${rootProject.minecraft_version}-fabric:${rootProject.jeiVersion}"
+    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabricLoaderVersion}"
+    modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabricApiVersion}"
+    modApi "gg.moonflower:pollen-fabric:${rootProject.pollenVersion}+${rootProject.minecraftVersion}"
+
+    modCompileOnlyApi "mezz.jei:jei-${rootProject.minecraftVersion}-fabric-api:${rootProject.jeiVersion}"
+    modRuntimeOnly "mezz.jei:jei-${rootProject.minecraftVersion}-fabric:${rootProject.jeiVersion}"
+
+    modRuntimeOnly "com.terraformersmc:modmenu:${rootProject.modMenuVersion}"
+
+    modRuntimeOnly "mcp.mobius.waila:wthit:fabric-${rootProject.wthitVersion}"
+    modRuntimeOnly "lol.bai:badpackets:fabric-${rootProject.badPacketsVersion}"
+
+    modCompileOnly("squeek.appleskin:appleskin-fabric:${rootProject.appleSkinFabric}") { transitive = false }
+    modRuntimeOnly("squeek.appleskin:appleskin-fabric:${rootProject.appleSkinFabric}") {
+        exclude module: 'fabric-api'
+        exclude module: 'modmenu'
+    }
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
@@ -69,15 +93,15 @@ task copyAccessWidener(type: Copy) {
 
 processResources {
     dependsOn(copyAccessWidener)
-    inputs.property "id", rootProject.mod_id
-    inputs.property "name", rootProject.mod_name
-    inputs.property "version", rootProject.mod_version
+    inputs.property "id", rootProject.modId
+    inputs.property "name", rootProject.modName
+    inputs.property "version", rootProject.modVersion
     inputs.property "repo", rootProject.name
 
     filesMatching("fabric.mod.json") {
-        expand "id": rootProject.mod_id,
-                "name": rootProject.mod_name,
-                "version": rootProject.mod_version,
+        expand "id": rootProject.modId,
+                "name": rootProject.modName,
+                "version": rootProject.modVersion,
                 "repo": rootProject.name
     }
 

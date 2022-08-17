@@ -5,7 +5,7 @@ plugins {
 }
 
 architectury {
-    minecraft = rootProject.minecraft_version
+    minecraft = rootProject.minecraftVersion
 }
 
 subprojects {
@@ -17,10 +17,10 @@ subprojects {
     }
 
     dependencies {
-        minecraft "com.mojang:minecraft:${rootProject.minecraft_version}"
+        minecraft "com.mojang:minecraft:${rootProject.minecraftVersion}"
         mappings loom.layered() {
             officialMojangMappings()
-//            parchment("org.parchmentmc.data:parchment-${rootProject.minecraft_version}:${rootProject.parchment_version}")
+//            parchment("org.parchmentmc.data:parchment-${rootProject.minecraftVersion}:${rootProject.parchmentVersion}")
         }
     }
 }
@@ -31,20 +31,15 @@ allprojects {
     apply plugin: "maven-publish"
 
     archivesBaseName = rootProject.name
-    version = "${rootProject.mod_version}+${rootProject.minecraft_version}"
-    group = rootProject.maven_group
+    version = "${rootProject.minecraftVersion}-${rootProject.modVersion}"
+    group = rootProject.mavenGroup
 
     repositories {
-		mavenLocal()
+        mavenLocal()
         maven { url "https://jitpack.io" }
         maven { url "https://repo.moonflower.gg/releases" }
         maven { url "https://maven.parchmentmc.org" }
-        maven {
-            url "https://www.cursemaven.com"
-            content {
-                includeGroup "curse.maven"
-            }
-        }
+        maven { url "https://maven.shedaniel.me/" }
         maven { // JustEnoughItems
             name = "Progwml6 maven"
             url = "https://dvs1.progwml6.com/files/maven/"
@@ -53,6 +48,13 @@ allprojects {
             name = "ModMaven"
             url = "https://modmaven.dev"
         }
+        maven {
+            url "https://www.cursemaven.com"
+            content {
+                includeGroup "curse.maven"
+            }
+        }
+        maven { url "https://maven.bai.lol" }
     }
 
     tasks.withType(JavaCompile) {
