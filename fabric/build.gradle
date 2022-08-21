@@ -68,20 +68,6 @@ dependencies {
     modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabricApiVersion}"
     modApi "gg.moonflower:pollen-fabric:${rootProject.pollenVersion}+${rootProject.minecraftVersion}"
 
-    modCompileOnlyApi "mezz.jei:jei-${rootProject.minecraftVersion}-fabric-api:${rootProject.jeiVersion}"
-    modRuntimeOnly "mezz.jei:jei-${rootProject.minecraftVersion}-fabric:${rootProject.jeiVersion}"
-
-    modRuntimeOnly "com.terraformersmc:modmenu:${rootProject.modMenuVersion}"
-
-    modRuntimeOnly "mcp.mobius.waila:wthit:fabric-${rootProject.wthitVersion}"
-    modRuntimeOnly "lol.bai:badpackets:fabric-${rootProject.badPacketsVersion}"
-
-    modCompileOnly("squeek.appleskin:appleskin-fabric:${rootProject.appleSkinFabric}") { transitive = false }
-    modRuntimeOnly("squeek.appleskin:appleskin-fabric:${rootProject.appleSkinFabric}") {
-        exclude module: 'fabric-api'
-        exclude module: 'modmenu'
-    }
-
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 }

@@ -52,20 +52,7 @@ repositories {
 
 dependencies {
     forge "net.minecraftforge:forge:${rootProject.minecraftVersion}-${rootProject.forgeVersion}"
-
     modApi "gg.moonflower:pollen-forge:${rootProject.pollenVersion}+${rootProject.minecraftVersion}"
-
-    modCompileOnlyApi "mezz.jei:jei-${rootProject.minecraftVersion}-forge-api:${rootProject.jeiVersion}"
-    modRuntimeOnly "mezz.jei:jei-${rootProject.minecraftVersion}-forge:${rootProject.jeiVersion}"
-
-    modCompileOnly "mcp.mobius.waila:wthit-api:forge-${rootProject.wthitVersion}"
-    modRuntimeOnly "mcp.mobius.waila:wthit:forge-${rootProject.wthitVersion}"
-    modRuntimeOnly "lol.bai:badpackets:forge-${rootProject.badPacketsVersion}"
-
-    modImplementation "curse.maven:appleskin-248787:${rootProject.appleSkinForge}"
-
-    modRuntimeOnly "curse.maven:shutupexperimentalsettings-407174:${rootProject.shutupVersion}"
-    modRuntimeOnly "curse.maven:configured-457570:${rootProject.configuredVersion}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }

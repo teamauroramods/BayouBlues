@@ -4,9 +4,6 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabricLoaderVersion}"
 
     modApi "gg.moonflower:pollen:${rootProject.pollenVersion}+${rootProject.minecraftVersion}"
-
-    modCompileOnlyApi "mezz.jei:jei-${rootProject.minecraftVersion}-common-api:${rootProject.jeiVersion}"
-    modCompileOnly "mcp.mobius.waila:wthit-api:fabric-${rootProject.wthitVersion}"
 }
 
 architectury {
