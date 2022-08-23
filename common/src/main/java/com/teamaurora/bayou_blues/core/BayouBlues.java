@@ -1,10 +1,7 @@
 package com.teamaurora.bayou_blues.core;
 
 import com.teamaurora.bayou_blues.core.other.BayouBluesData;
-import com.teamaurora.bayou_blues.core.registry.BayouBluesBlocks;
-import com.teamaurora.bayou_blues.core.registry.BayouBluesBoatTypes;
-import com.teamaurora.bayou_blues.core.registry.BayouBluesFeatures;
-import com.teamaurora.bayou_blues.core.registry.BayouBluesItems;
+import com.teamaurora.bayou_blues.core.registry.*;
 import gg.moonflower.pollen.api.platform.Platform;
 import gg.moonflower.pollen.api.registry.client.ColorRegistry;
 import gg.moonflower.pollen.api.registry.client.RenderTypeRegistry;
@@ -64,6 +61,7 @@ public class BayouBlues {
         BayouBluesBoatTypes.load(PLATFORM);
         BayouBluesFeatures.load(PLATFORM);
         BayouBluesFeatures.Configured.load(PLATFORM);
+        BayouBluesBiomes.load(PLATFORM);
     }
 
     public static void onCommonPostInit(Platform.ModSetupContext ctx) {
