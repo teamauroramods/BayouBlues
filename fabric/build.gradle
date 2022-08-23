@@ -67,6 +67,7 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabricLoaderVersion}"
     modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabricApiVersion}"
     modApi "gg.moonflower:pollen-fabric:${rootProject.pollenVersion}+${rootProject.minecraftVersion}"
+    modImplementation("com.github.glitchfiend:TerraBlender-fabric:${rootProject.minecraftVersion}-${rootProject.terrablender_version}")
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }

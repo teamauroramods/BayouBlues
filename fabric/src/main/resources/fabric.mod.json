@@ -23,13 +23,14 @@
     "main": [
       "com.teamaurora.bayou_blues.core.fabric.BayouBluesFabric"
     ],
-    "fabric-datagen": [
-      "com.teamaurora.bayou_blues.core.fabric.BayouBluesFabricDatagen"
+    "terrablender": [
+      "com.teamaurora.bayou_blues.core.fabric.BayouBluesFabric"
     ]
   },
   "depends": {
     "fabric": "*",
     "minecraft": "1.18.2",
-    "pollen": ">=1.4.9 <2.0.0"
+    "pollen": ">=1.4.9 <2.0.0",
+    "terrablender": ">=1.1.0.101"
   }
 }
