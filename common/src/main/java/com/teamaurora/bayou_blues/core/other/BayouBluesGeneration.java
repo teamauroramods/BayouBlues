@@ -1,5 +1,6 @@
 package com.teamaurora.bayou_blues.core.other;
 
+import com.teamaurora.bayou_blues.core.registry.BayouBluesFeatures;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
 import net.minecraft.sounds.Music;
@@ -54,6 +55,16 @@ public class BayouBluesGeneration {
         BiomeDefaultFeatures.commonSpawns(spawnBuilder);
         BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
         globalOverworldGeneration(biomeBuilder);
+        bayouVegetation(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, BayouBluesFeatures.Configured.getHolder(BayouBluesFeatures.Configured.PODZOL_PLACED, "podzol_patch"));
         return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.SWAMP, 0.75F, 1.0F, 0x87C0C6, 0x3D5156, 0xA0E2E5, spawnBuilder, biomeBuilder, NORMAL_MUSIC);
+    }
+
+    private static void bayouVegetation(BiomeGenerationSettings.Builder gen) {
+        bayouGrasses(gen);
+    }
+
+    private static void bayouGrasses(BiomeGenerationSettings.Builder gen) {
+
     }
 }
