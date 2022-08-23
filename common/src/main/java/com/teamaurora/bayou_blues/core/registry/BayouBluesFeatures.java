@@ -23,6 +23,7 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvi
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.BiomeFilter;
+import net.minecraft.world.level.levelgen.placement.InSquarePlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.RarityFilter;
 import org.apache.logging.log4j.LogManager;
@@ -107,7 +108,7 @@ public class BayouBluesFeatures {
 
         public static final Supplier<ConfiguredFeature<NoneFeatureConfiguration, ?>> PODZOL = CONFIGURED_FEATURES.register("podzol_patch", () -> new ConfiguredFeature<>(PODZOL_PATCH.get(), FeatureConfiguration.NONE));
 
-        public static final Supplier<PlacedFeature> PODZOL_PLACED = PLACEMENTS.register("podzol_patch", () -> new PlacedFeature(Holder.direct(PODZOL.get()), List.of(PlacementUtils.HEIGHTMAP_WORLD_SURFACE, RarityFilter.onAverageOnceEvery(2), BiomeFilter.biome())));
+        public static final Supplier<PlacedFeature> PODZOL_PLACED = PLACEMENTS.register("podzol_patch", () -> new PlacedFeature(Holder.direct(PODZOL.get()), List.of(InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.countExtra(1, 0.1F, 1), BiomeFilter.biome())));
 
         @ExpectPlatform
         public static Holder<PlacedFeature> getHolder(Supplier<PlacedFeature> feature, String name) {
