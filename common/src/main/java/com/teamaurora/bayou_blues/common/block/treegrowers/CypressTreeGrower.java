@@ -1,4 +1,4 @@
-package com.teamaurora.bayou_blues.common.treegrowers;
+package com.teamaurora.bayou_blues.common.block.treegrowers;
 
 import com.teamaurora.bayou_blues.core.registry.BayouBluesFeatures;
 import net.minecraft.core.Holder;

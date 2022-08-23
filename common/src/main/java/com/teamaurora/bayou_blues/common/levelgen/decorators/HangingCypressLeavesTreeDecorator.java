@@ -1,4 +1,4 @@
-package com.teamaurora.bayou_blues.common.world.decorators;
+package com.teamaurora.bayou_blues.common.levelgen.decorators;
 
 import com.mojang.serialization.Codec;
 import com.teamaurora.bayou_blues.common.util.TreeUtil;
