@@ -2,7 +2,9 @@ package com.teamaurora.bayou_blues.core.other;
 
 import com.teamaurora.bayou_blues.core.registry.BayouBluesFeatures;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
+import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.sounds.Music;
 import net.minecraft.sounds.Musics;
 import net.minecraft.sounds.SoundEvents;
@@ -53,10 +55,21 @@ public class BayouBluesGeneration {
     public static Biome bayou() {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
         BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+        BiomeDefaultFeatures.farmAnimals(spawnBuilder);
         BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
+        spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SLIME, 1, 1, 1));
+        BiomeDefaultFeatures.addFossilDecoration(biomeBuilder);
         globalOverworldGeneration(biomeBuilder);
-        bayouVegetation(biomeBuilder);
-        biomeBuilder.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, BayouBluesFeatures.Configured.getHolder(BayouBluesFeatures.Configured.PODZOL_PLACED, "podzol_patch"));
+        BiomeDefaultFeatures.addFerns(biomeBuilder);
+        BiomeDefaultFeatures.addPlainGrass(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addSwampClayDisk(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_TAIGA_2);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
+        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+        BiomeDefaultFeatures.addSwampExtraVegetation(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_SWAMP);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BayouBluesFeatures.Configured.getHolder(BayouBluesFeatures.Configured.PODZOL_PLACED, "podzol_patch"));
         return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.SWAMP, 0.75F, 1.0F, 0x87C0C6, 0x3D5156, 0xA0E2E5, spawnBuilder, biomeBuilder, NORMAL_MUSIC);
     }
 
