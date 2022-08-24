@@ -58,26 +58,37 @@ public class BayouBluesGeneration {
         BiomeDefaultFeatures.farmAnimals(spawnBuilder);
         BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
         spawnBuilder.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SLIME, 1, 1, 1));
+
         BiomeDefaultFeatures.addFossilDecoration(biomeBuilder);
         globalOverworldGeneration(biomeBuilder);
+        bayouVegetation(biomeBuilder);
         BiomeDefaultFeatures.addFerns(biomeBuilder);
         BiomeDefaultFeatures.addPlainGrass(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
         BiomeDefaultFeatures.addSwampClayDisk(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_SWAMP);
+
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_TAIGA_2);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_PLAIN);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.BROWN_MUSHROOM_SWAMP);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.RED_MUSHROOM_SWAMP);
+
         BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
         BiomeDefaultFeatures.addSwampExtraVegetation(biomeBuilder);
+
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_SWAMP);
-        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BayouBluesFeatures.Configured.getHolder(BayouBluesFeatures.Configured.PODZOL_PLACED, "podzol_patch"));
         return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.SWAMP, 0.75F, 1.0F, 0x87C0C6, 0x3D5156, 0xA0E2E5, spawnBuilder, biomeBuilder, NORMAL_MUSIC);
     }
 
-    private static void bayouVegetation(BiomeGenerationSettings.Builder gen) {
-        bayouGrasses(gen);
+    private static void bayouVegetation(BiomeGenerationSettings.Builder biomeBuilder) {
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BayouBluesFeatures.Configured.getHolder(BayouBluesFeatures.Configured.PODZOL_PLACED, "podzol_patch"));
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BayouBluesFeatures.Configured.getHolder(BayouBluesFeatures.Configured.PATCH_GIANT_FERN_PLACED, "patch_giant_fern"));
+        addLilies(biomeBuilder);
     }
 
-    private static void bayouGrasses(BiomeGenerationSettings.Builder gen) {
-
+    public static void addLilies(BiomeGenerationSettings.Builder biomeBuilder) {
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BayouBluesFeatures.Configured.getHolder(BayouBluesFeatures.Configured.PATCH_LILY_COOL_PLACED, "patch_lily_cool"));
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BayouBluesFeatures.Configured.getHolder(BayouBluesFeatures.Configured.PATCH_LILY_NEUTRAL_PLACED, "patch_lily_neutral"));
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BayouBluesFeatures.Configured.getHolder(BayouBluesFeatures.Configured.PATCH_LILY_WARM_PLACED, "patch_lily_warm"));
     }
 }
