@@ -55,6 +55,7 @@ public class BayouBluesFeatures {
     public static final Supplier<Feature<TreeConfiguration>> WATER_CYPRESS_TREE = FEATURES.register("water_cypress_tree", () -> new WaterCypressFeature(TreeConfiguration.CODEC));
     public static final Supplier<Feature<TreeConfiguration>> WATER_MEGA_CYPRESS_TREE = FEATURES.register("water_mega_cypress_tree", () -> new WaterMegaCypressFeature(TreeConfiguration.CODEC));
     public static final Supplier<Feature<NoneFeatureConfiguration>> PODZOL_PATCH = FEATURES.register("podzol_patch", () -> new PodzolPatchFeature(NoneFeatureConfiguration.CODEC));
+    public static final Supplier<Feature<BlockStateConfiguration>> LARGE_PATCH = FEATURES.register("large_patch", () -> new LargePatchFeature(BlockStateConfiguration.CODEC));
 
 
     public static final Supplier<TreeDecoratorType<?>> HANGING_CYPRESS_LEAVES = TREE_DECORATOR_TYPES.register("hanging_cypress_leaves", () -> new TreeDecoratorType<>(HangingCypressLeavesTreeDecorator.CODEC));
@@ -133,8 +134,7 @@ public class BayouBluesFeatures {
         public static final Supplier<ConfiguredFeature<TreeConfiguration, ?>> GROWN_CYPRESS_TREE = CONFIGURED_FEATURES.register("cypress_grown", () -> new ConfiguredFeature<>(CYPRESS_TREE.get(), Configs.GROWN_CYPRESS.build()));
         public static final Supplier<ConfiguredFeature<TreeConfiguration, ?>> GROWN_MEGA_CYPRESS_TREE = CONFIGURED_FEATURES.register("mega_cypress_grown", () -> new ConfiguredFeature<>(MEGA_CYPRESS_TREE.get(), Configs.GROWN_CYPRESS.build()));
 
-
-
+        public static final Supplier<ConfiguredFeature<BlockStateConfiguration, ?>> ALGAE_PATCH = CONFIGURED_FEATURES.register("algae_patch", () -> new ConfiguredFeature<>(LARGE_PATCH.get(), Configs.ALGAE_PATCH));
         public static final Supplier<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_GIANT_FERN = CONFIGURED_FEATURES.register("patch_giant_fern", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(BayouBluesBlocks.GIANT_FERN.get())))));
         public static final Supplier<ConfiguredFeature<NoneFeatureConfiguration, ?>> PODZOL = CONFIGURED_FEATURES.register("podzol_patch", () -> new ConfiguredFeature<>(PODZOL_PATCH.get(), FeatureConfiguration.NONE));
         public static final Supplier<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_LILY_COOL = CONFIGURED_FEATURES.register("patch_lily_cool", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, Configs.PATCH_LILY_COOL));
@@ -142,7 +142,9 @@ public class BayouBluesFeatures {
         public static final Supplier<ConfiguredFeature<RandomPatchConfiguration, ?>> PATCH_LILY_WARM = CONFIGURED_FEATURES.register("patch_lily_warm", () -> new ConfiguredFeature<>(Feature.RANDOM_PATCH, Configs.PATCH_LILY_WARM));
 
         public static final Supplier<PlacedFeature> PATCH_GIANT_FERN_PLACED = PLACEMENTS.register("patch_giant_fern", () -> new PlacedFeature(Holder.direct(PATCH_GIANT_FERN.get()), List.of(RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
-        public static final Supplier<PlacedFeature> PODZOL_PLACED = PLACEMENTS.register("podzol_patch", () -> new PlacedFeature(Holder.direct(PODZOL.get()), List.of(InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, PlacementUtils.countExtra(1, 0.1F, 1), BiomeFilter.biome())));
+        public static final Supplier<PlacedFeature> PODZOL_PLACED = PLACEMENTS.register("podzol_patch", () -> new PlacedFeature(Holder.direct(PODZOL.get()), List.of(InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, PlacementUtils.countExtra(1, 0.1F, 1), BiomeFilter.biome())));
+        public static final Supplier<PlacedFeature> ALGAE_PATCH_PLACED = PLACEMENTS.register("algae_patch", () -> new PlacedFeature(Holder.direct(ALGAE_PATCH.get()), List.of(InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, RarityFilter.onAverageOnceEvery(2), BiomeFilter.biome())));
+
         public static final Supplier<PlacedFeature> PATCH_LILY_COOL_PLACED = PLACEMENTS.register("patch_lily_cool", () -> new PlacedFeature(Holder.direct(PATCH_LILY_COOL.get()), VegetationPlacements.worldSurfaceSquaredWithCount(4)));
         public static final Supplier<PlacedFeature> PATCH_LILY_NEUTRAL_PLACED = PLACEMENTS.register("patch_lily_neutral", () -> new PlacedFeature(Holder.direct(PATCH_LILY_NEUTRAL.get()), VegetationPlacements.worldSurfaceSquaredWithCount(4)));
         public static final Supplier<PlacedFeature> PATCH_LILY_WARM_PLACED = PLACEMENTS.register("patch_lily_warm", () -> new PlacedFeature(Holder.direct(PATCH_LILY_WARM.get()), VegetationPlacements.worldSurfaceSquaredWithCount(4)));

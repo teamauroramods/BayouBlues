@@ -81,6 +81,7 @@ public class BayouBluesGeneration {
     }
 
     private static void bayouVegetation(BiomeGenerationSettings.Builder biomeBuilder) {
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BayouBluesFeatures.Configured.getHolder(BayouBluesFeatures.Configured.ALGAE_PATCH_PLACED, "algae_patch"));
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BayouBluesFeatures.Configured.getHolder(BayouBluesFeatures.Configured.PODZOL_PLACED, "podzol_patch"));
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, BayouBluesFeatures.Configured.getHolder(BayouBluesFeatures.Configured.PATCH_GIANT_FERN_PLACED, "patch_giant_fern"));
         addLilies(biomeBuilder);
