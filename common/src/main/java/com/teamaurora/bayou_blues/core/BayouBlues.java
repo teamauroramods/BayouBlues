@@ -24,35 +24,43 @@ public class BayouBlues {
             .build();
 
     public static void onClientInit() {
-        ColorRegistry.register((state, level, pos, tintIndex) -> {return level != null && pos != null ? BiomeColors.getAverageFoliageColor(level, pos) : FoliageColor.getDefaultColor();}, BayouBluesBlocks.CYPRESS_LEAVES, BayouBluesBlocks.HANGING_CYPRESS_LEAVES, BayouBluesBlocks.CYPRESS_LEAF_CARPET);
-        ColorRegistry.register((stack, tintIndex) -> {return FoliageColor.getDefaultColor();}, BayouBluesBlocks.CYPRESS_LEAVES, BayouBluesBlocks.HANGING_CYPRESS_LEAVES, BayouBluesBlocks.CYPRESS_LEAF_CARPET);
-        ColorRegistry.register((state, level, pos, tintIndex) -> {return level != null && pos != null ? BiomeColors.getAverageGrassColor(level, pos) : GrassColor.get(0.5D, 1.0D);}, BayouBluesBlocks.GIANT_FERN);
-        ColorRegistry.register((stack, tintIndex) -> {return GrassColor.get(0.5D, 1.0D);}, BayouBluesBlocks.GIANT_FERN);
-        ColorRegistry.register((state, level, pos, tintIndex) -> {return level != null && pos != null ? 2129968 : 7455580;}, BayouBluesBlocks.BLUE_LILY, BayouBluesBlocks.LIGHT_GRAY_LILY, BayouBluesBlocks.CYAN_LILY, BayouBluesBlocks.LIGHT_BLUE_LILY, BayouBluesBlocks.MAGENTA_LILY, BayouBluesBlocks.PINK_LILY, BayouBluesBlocks.PURPLE_LILY, BayouBluesBlocks.WHITE_LILY);
+        ColorRegistry.register((state, level, pos, tintIndex) -> level != null && pos != null ? BiomeColors.getAverageFoliageColor(level, pos) : FoliageColor.getDefaultColor(), BayouBluesBlocks.CYPRESS_LEAVES, BayouBluesBlocks.HANGING_CYPRESS_LEAVES, BayouBluesBlocks.CYPRESS_LEAF_CARPET);
+        ColorRegistry.register((stack, tintIndex) -> FoliageColor.getDefaultColor(), BayouBluesBlocks.CYPRESS_LEAVES, BayouBluesBlocks.HANGING_CYPRESS_LEAVES, BayouBluesBlocks.CYPRESS_LEAF_CARPET);
+        ColorRegistry.register((state, level, pos, tintIndex) -> level != null && pos != null ? BiomeColors.getAverageGrassColor(level, pos) : GrassColor.get(0.5D, 1.0D), BayouBluesBlocks.GIANT_FERN);
+        ColorRegistry.register((stack, tintIndex) -> GrassColor.get(0.5D, 1.0D), BayouBluesBlocks.GIANT_FERN);
+        ColorRegistry.register((state, level, pos, tintIndex) -> level != null && pos != null ? 2129968 : 7455580, BayouBluesBlocks.BLUE_LILY, BayouBluesBlocks.LIGHT_GRAY_LILY, BayouBluesBlocks.CYAN_LILY, BayouBluesBlocks.LIGHT_BLUE_LILY, BayouBluesBlocks.MAGENTA_LILY, BayouBluesBlocks.PINK_LILY, BayouBluesBlocks.PURPLE_LILY, BayouBluesBlocks.WHITE_LILY);
     }
 
     public static void onClientPostInit(Platform.ModSetupContext ctx) {
-            RenderTypeRegistry.register(BayouBluesBlocks.HANGING_CYPRESS_LEAVES.get(), RenderType.cutoutMipped());
-            RenderTypeRegistry.register(BayouBluesBlocks.CYPRESS_LEAF_CARPET.get(), RenderType.cutout());
-            RenderTypeRegistry.register(BayouBluesBlocks.CYPRESS_SAPLING.get(), RenderType.cutout());
-            RenderTypeRegistry.register(BayouBluesBlocks.POTTED_CYPRESS_SAPLING.get(), RenderType.cutout());
-            RenderTypeRegistry.register(BayouBluesBlocks.ALGAE.get(), RenderType.cutout());
-            RenderTypeRegistry.register(BayouBluesBlocks.ALGAE_THATCH.get(), RenderType.cutout());
-            RenderTypeRegistry.register(BayouBluesBlocks.ALGAE_THATCH_SLAB.get(), RenderType.cutout());
-            RenderTypeRegistry.register(BayouBluesBlocks.ALGAE_THATCH_STAIRS.get(), RenderType.cutout());
-            RenderTypeRegistry.register(BayouBluesBlocks.CYPRESS_KNEE.get(), RenderType.cutout());
-            RenderTypeRegistry.register(BayouBluesBlocks.LARGE_CYPRESS_KNEE.get(), RenderType.cutout());
-            RenderTypeRegistry.register(BayouBluesBlocks.CYPRESS_BRANCH.get(), RenderType.cutout());
-            RenderTypeRegistry.register(BayouBluesBlocks.BLUE_LILY.get(), RenderType.cutout());
-            RenderTypeRegistry.register(BayouBluesBlocks.LIGHT_GRAY_LILY.get(), RenderType.cutout());
-            RenderTypeRegistry.register(BayouBluesBlocks.CYAN_LILY.get(), RenderType.cutout());
-            RenderTypeRegistry.register(BayouBluesBlocks.LIGHT_BLUE_LILY.get(), RenderType.cutout());
-            RenderTypeRegistry.register(BayouBluesBlocks.MAGENTA_LILY.get(), RenderType.cutout());
-            RenderTypeRegistry.register(BayouBluesBlocks.PINK_LILY.get(), RenderType.cutout());
-            RenderTypeRegistry.register(BayouBluesBlocks.PURPLE_LILY.get(), RenderType.cutout());
-            RenderTypeRegistry.register(BayouBluesBlocks.WHITE_LILY.get(), RenderType.cutout());
-            RenderTypeRegistry.register(BayouBluesBlocks.BEARD_MOSS.get(), RenderType.cutout());
-            RenderTypeRegistry.register(BayouBluesBlocks.GIANT_FERN.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.HANGING_CYPRESS_LEAVES.get(), RenderType.cutoutMipped());
+        RenderTypeRegistry.register(BayouBluesBlocks.CYPRESS_LEAF_CARPET.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.CYPRESS_SAPLING.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.POTTED_CYPRESS_SAPLING.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.ALGAE.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.ALGAE_THATCH.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.ALGAE_THATCH_SLAB.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.ALGAE_THATCH_STAIRS.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.CYPRESS_KNEE.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.LARGE_CYPRESS_KNEE.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.CYPRESS_BRANCH.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.BLUE_LILY.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.LIGHT_GRAY_LILY.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.CYAN_LILY.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.LIGHT_BLUE_LILY.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.MAGENTA_LILY.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.PINK_LILY.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.PURPLE_LILY.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.WHITE_LILY.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.BEARD_MOSS.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.GIANT_FERN.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.POTTED_BLUE_LILY.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.POTTED_LIGHT_GRAY_LILY.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.POTTED_CYAN_LILY.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.POTTED_LIGHT_BLUE_LILY.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.POTTED_MAGENTA_LILY.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.POTTED_PINK_LILY.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.POTTED_PURPLE_LILY.get(), RenderType.cutout());
+        RenderTypeRegistry.register(BayouBluesBlocks.POTTED_WHITE_LILY.get(), RenderType.cutout());
     }
 
     public static void onCommonInit() {
